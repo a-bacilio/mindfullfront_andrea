@@ -43,7 +43,7 @@ function Levels() {
   return (
     <div>
         <div className='w-full items-center'>
-            <h1 className='text-2xl text-bold text-white text-center'>Niveles</h1>
+            <h1 className='text-2xl text-bold text-white text-center'>Niveles parte 2</h1>
         </div>
         <div className='grid lg:grid-cols-6 md:grid-cols-3 grid-cols-3'>
             {images.map((x,i)=><Link key={"link_nivel_"+String(i)} className='w-full flex flex-col items-center justify-centers' to={"/level/"+String(i+1)}>
