@@ -11,6 +11,8 @@ const initialState = {
   },
 };
 
+const niveluser=3
+
 const authSlice = createSlice({
   // el slice tendra nombre products, su valor inicial sera el valor inicial y sus reducers estan vacios
   name: "auth",
@@ -27,7 +29,7 @@ const authSlice = createSlice({
       jsCookie.set("MFM_PROGRESS", action.payload.progress);
       jsCookie.set("MFM_LASTCOMP", action.payload.last_completed);
       jsCookie.set("MFM_TOKEN", action.payload.token);
-      window.location = "/levels";
+      window.location = "/level/"+String(niveluser-1);
     },
     removeUserToken(state) {
       state.user = initialState.user;
