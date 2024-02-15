@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes as Router } from "react-router-dom";
+import { Route, Routes as Router } from "react-router";
 import Index from "../pages/index/Index";
 import Levels from "../pages/Levels";
 import Level from "../pages/Level";

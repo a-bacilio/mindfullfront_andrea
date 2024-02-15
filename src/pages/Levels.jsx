@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import img1 from "../assets/images/levels/1.png"
 import img2 from "../assets/images/levels/2.png"
 import img3 from "../assets/images/levels/3.png"

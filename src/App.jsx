@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Route, Routes as Router } from "react-router-dom";
+import { Route, Routes as Router } from "react-router";
 
 import './App.css'
 import Layout from './components/layout/layout';
