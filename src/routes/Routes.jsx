@@ -3,6 +3,7 @@ import { Route, Routes as Router } from "react-router-dom";
 import Index from "../pages/index/Index";
 import Levels from "../pages/Levels";
 import Level from "../pages/Level";
+import Consent from "../pages/Consent";
 
 function Routes() {
     return (
@@ -15,6 +16,9 @@ function Routes() {
 
             <Route
                 path='/levels' element={<Levels />} />
+
+            <Route
+                path='/consent' element={<Consent />} />
 
 
 
