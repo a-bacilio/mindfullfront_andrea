@@ -4,6 +4,7 @@ import Index from "../pages/index/Index";
 import Levels from "../pages/Levels";
 import Level from "../pages/Level";
 import Consent from "../pages/Consent";
+import PSS10 from "../pages/PSS10";
 
 function Routes() {
     return (
@@ -19,6 +20,9 @@ function Routes() {
 
             <Route
                 path='/consent' element={<Consent />} />
+                
+            <Route
+                path='/pss10' element={<PSS10 />} />
 
 
 

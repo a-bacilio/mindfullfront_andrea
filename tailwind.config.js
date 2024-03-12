@@ -2,6 +2,9 @@
 export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+   fontFamily: {
+      'raleway': '"Raleway"'
+    },
     extend: {},
   },
   plugins: [],

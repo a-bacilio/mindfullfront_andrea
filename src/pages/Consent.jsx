@@ -1,10 +1,12 @@
 import React from 'react'
-import img30 from "../assets/images/levels/30.png"
 
 function Consent() {
   return (
     <><div class="w-full max-w-96 mt-8 mb-8 h-full p-10 overflow-auto bg-purple-800/75 rounded-lg text-white text-justify">
-      CONSENTIMIENTO INFORMADO PARA PARTICIPAR EN UN ESTUDIO DE INVESTIGACIÓN
+      <div>
+        CONSENTIMIENTO INFORMADO PARA PARTICIPAR EN UN ESTUDIO DE INVESTIGACIÓN
+      </div>
+      
       Titulo del estudio: IMPLEMENTACIÓN DE UNA APLICACIÓN MÓVIL DE MINDFULNESS PARA MEJORAR LOS ÍNDICES DE ESTRÉS PERCIBIDO EN ESTUDIANTES UNIVERSITARIOS DE PREGRADO EN UNA UNIVERSIDAD DE LIMA, PERÚ.
       Investigador: Andrea Montero
       Institución: Universidad Peruana Cayetano Heredia
@@ -55,9 +57,9 @@ function Consent() {
 
     </div>
     
-    <div class='flex-row'>
-      <button className='bg-white w-1/2 opacity-55 text-justify rounded-lg'>No acepto</button>
-      <button className='bg-white w-1/2 opacity-80 rounded-lg'>Acepto</button>
+    <div class='flex-row flex space-x-20'>
+      <button className='bg-white w-32 opacity-55 rounded-lg'>No acepto</button>
+      <button className='bg-white w-32 opacity-80 rounded-lg'>Acepto</button>
     
     </div></>
     )
