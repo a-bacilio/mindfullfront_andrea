@@ -31,6 +31,7 @@ import img28 from "../assets/images/levels/28.png"
 import img29 from "../assets/images/levels/29.png"
 import img30 from "../assets/images/levels/30.png"
 
+
 function Level() {
 
 
@@ -71,15 +72,18 @@ function Level() {
                         <img src={info.level_img}></img>
                         <button className='bg-white mt-8 w-1/2 opacity-65' onClick={() => setCard(1)} >Iniciar meditación</button></div></div>}
             
-            {card == 1 && <div className='w-full items-center'>
-                <iframe title="vimeo-player" src="https://player.vimeo.com/video/5238050?h=3e9e4971a4" width="1080" height="1350" frameborder="0"    allowfullscreen></iframe></div>}
+            {card == 1 && <div className='w-full items-center fixed top-0 left-0 w-full h-full flex-center flex-column justify-center z-[100] bg-black'>
+                <iframe title="vimeo-player" src="https://player.vimeo.com/video/5238050?h=3e9e4971a4" className="absolute z-10 w-auto min-w-full min-h-full max-w-none"></iframe></div>}
 
             {card == 2 && <div className='w-full items-center'>
                 <h1 className='text-2xl text-bold text-white text-center mt-5'>Nivel {Number(level_x)}</h1>
                 <h2>{info.title ?? "Titulo en blanco"}</h2>
                 <p>{info.text ?? "Cuerpo del texto"}</p>
-                <iframe title="vimeo-player" src="https://player.vimeo.com/video/5238050?h=3e9e4971a4" width="360" height="640" frameborder="0"    allowfullscreen></iframe>
-
+                <div class="aspect-video">
+                <iframe title="vimeo-player" class="w-full h-full" src="https://player.vimeo.com/video/5238050?h=3e9e4971a4" wframeborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+</div>
             </div>}
 
 
