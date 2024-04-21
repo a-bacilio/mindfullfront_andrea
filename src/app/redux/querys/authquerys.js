@@ -17,9 +17,44 @@ export const authAPI = createApi({
       }),
       transformResponse: (response) => response,
     }),
+    postRegisterUser: builder.mutation({
+      query: ({ name, email, password, password_confirmation, question_1, question_2, answer_1, answer_2 }) => ({
+        url: "/register",
+        method: "post",
+        headers:{
+          Accept: "aplication/json"
+        },
+        body: {
+          name,
+          email,
+          password,
+          password_confirmation,
+          question_1,
+          question_2,
+          answer_1,
+          answer_2,
+        },
+      }),
+      transformResponse: (response) => response,
+    }),
+    postRecoverQuestions: builder.mutation({
+      query: ({ email }) => ({
+        url: "/recoverquestions",
+        method: "post",
+        headers:{
+          Accept: "aplication/json"
+        },
+        body: {
+          email
+        },
+      }),
+      transformResponse: (response) => response,
+    }),
   }),
 });
 
 export const {
   usePostLoginUserMutation,
+  usePostRegisterUserMutation,
+  usePostRecoverQuestionsMutation 
 } = authAPI;

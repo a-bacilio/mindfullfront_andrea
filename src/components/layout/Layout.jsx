@@ -16,8 +16,8 @@ function Layout({ children }) {
     return (
         <div className='h-full w-full bg-black-100 bg-black min-h-svh relative'>
             
-            <div className='w-full h-full absolute top-0 left-0 '>
-                <img className='w-full absolute top-0 left-0 h-full' src={bg_image} />
+            <div className='w-full h-full fixed top-0 left-0 '>
+                <img className='w-full fixed top-0 left-0 h-full' src={bg_image} />
             </div>
             <div className='pt-14 absolute w-full h-full top-0 left-0 flex flex-col items-center'>
             { (!modal & !about) && children }
@@ -41,6 +41,7 @@ function Layout({ children }) {
                 Acerca de
             </div> }
             </div>
+            
             <div className='border-red border-2 z-1 absolute bg-white h-14 w-full flex flex-row justify-center items-center'>
                 <div className='max-w-4xl w-full  flex flex-row items-center justify-between px-4'>
                     <div >
