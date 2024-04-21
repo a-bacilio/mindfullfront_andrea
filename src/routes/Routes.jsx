@@ -6,6 +6,7 @@ import Level from "../pages/Level";
 import Consent from "../pages/Consent";
 import PSS10 from "../pages/PSS10";
 import Anim from "../pages/Anim";
+import Clock from "../pages/Clock";
 
 function Routes() {
     return (
@@ -25,8 +26,12 @@ function Routes() {
             <Route
                 path='/pss10' element={<PSS10 />} />
            
-           <Route
+            <Route
                 path='/anim' element={<Anim />} />
+            
+            <Route
+                path='/clock' element={<Clock />} />
+        
         </Router>
     )
 }
