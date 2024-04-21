@@ -65,11 +65,11 @@ function Level() {
 
     return (
         <div className='w-full h-full'>
-            {card == 0 &&
+            {(card == 0 && info )&&
                 <div className='border-solid border-yellow-100 border-100 w-full h-full flex flex-col justify-center items-center'>
-                    <h1 className='mb-8 font-raleway'>{info.title}</h1>
+                    <h1 className='mb-8 font-raleway'>{info.title ?? ""}</h1>
                     <div className="w-full sm:max-w-80 p-5 border-solid border-red border-100 pt-12 flex flex-col justify-center items-center" >
-                        <img src={info.level_img}></img>
+                        <img src={info.level_img??""}></img>
                         <button className='bg-white mt-8 w-1/2 opacity-65' onClick={() => setCard(1)} >Iniciar meditación</button></div></div>}
             
             {card == 1 && <div className='w-full items-center fixed top-0 left-0 w-full h-full flex-center flex-column justify-center z-[100] bg-black'>
@@ -85,6 +85,10 @@ function Level() {
       allowfullscreen></iframe>
 </div>
             </div>}
+
+            {
+                !info && <div>No existe datos del nivel</div>
+            }
 
 
         </div >

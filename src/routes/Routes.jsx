@@ -6,6 +6,7 @@ import Level from "../pages/Level";
 import Consent from "../pages/Consent";
 import PSS10 from "../pages/PSS10";
 import Anim from "../pages/Anim";
+import Apitest from "../pages/Apitest";
 
 function Routes() {
     return (
@@ -27,6 +28,9 @@ function Routes() {
            
            <Route
                 path='/anim' element={<Anim />} />
+
+<Route
+                path='/apitest' element={<Apitest />} />
         </Router>
     )
 }
