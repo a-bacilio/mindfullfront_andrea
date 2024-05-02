@@ -2,7 +2,8 @@ import React from 'react'
 
 function Consent() {
   return (
-    <><div class="w-full max-w-96 mt-8 mb-8 h-full p-10 overflow-auto bg-purple-800/75 rounded-lg text-white text-justify">
+    <>
+    <div class="w-full max-w-96 mt-8 mb-8 h-full p-10 overflow-auto bg-purple-800/75 rounded-lg text-white text-justify">
       <div className='mb-8'>
         CONSENTIMIENTO INFORMADO PARA PARTICIPAR EN UN ESTUDIO DE INVESTIGACIÓN
       </div>

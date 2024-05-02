@@ -11,9 +11,9 @@ const renderTime = ({ remainingTime }) => {
 
   return (
     <div className="timer">
-      <div className="text">Remaining</div>
+   
       <div className="value">{remainingTime}</div>
-      <div className="text">seconds</div>
+     
     </div>
   );
 };
@@ -30,7 +30,7 @@ function App() {
         <CountdownCircleTimer
           isPlaying
           duration={10}
-          colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
+          colors={["#F2EFAF", "#F7B801", "#A30000", "#0000"]}
           colorsTime={[10, 6, 3, 0]}
           onComplete={() => ({ shouldRepeat: true, delay: 1 })}
         >
@@ -44,5 +44,6 @@ function App() {
     </div>
   );
 }
+//style="position:absolute;top:0;left:0;width:100%;height:100%;"
 
 export default App

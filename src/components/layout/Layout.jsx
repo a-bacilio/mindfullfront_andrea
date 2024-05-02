@@ -13,6 +13,10 @@ function Layout({ children }) {
     const [modal, setmodal] = useState(false);
     const [about, setAbout] = useState(false);
 
+const obtenernivel=()=>{
+    
+}
+
     return (
         <div className='h-full w-full bg-black-100 bg-black min-h-svh relative'>
             

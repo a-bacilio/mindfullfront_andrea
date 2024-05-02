@@ -70,7 +70,9 @@ function PSS10() {
                     <div>
                         <button className='bg-white mt-8 w-1/2 opacity-65' onClick={() => setCard(2)} >Siguiente</button>
                     </div>
+                    
                 </div>
+                
 
             }
 

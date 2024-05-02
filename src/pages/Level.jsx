@@ -65,25 +65,26 @@ function Level() {
 
     return (
         <div className='w-full h-full'>
-            {(card == 0 && info )&&
+            {(card == 0 && info) &&
                 <div className='border-solid border-yellow-100 border-100 w-full h-full flex flex-col justify-center items-center'>
                     <h1 className='mb-8 font-raleway'>{info.title ?? ""}</h1>
                     <div className="w-full sm:max-w-80 p-5 border-solid border-red border-100 pt-12 flex flex-col justify-center items-center" >
-                        <img src={info.level_img??""}></img>
+                        <img src={info.level_img ?? ""}></img>
                         <button className='bg-white mt-8 w-1/2 opacity-65' onClick={() => setCard(1)} >Iniciar meditación</button></div></div>}
-            
+
             {card == 1 && <div className='w-full items-center fixed top-0 left-0 w-full h-full flex-center flex-column justify-center z-[100] bg-black'>
-                <iframe title="vimeo-player" src="https://player.vimeo.com/video/5238050?h=3e9e4971a4" className="absolute z-10 w-auto min-w-full min-h-full max-w-none"></iframe></div>}
+                <div className="relative;"><iframe className="absolute top-0 left-0 w-full h-full" src={info.link_video} frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe></div>
+                </div>}
 
             {card == 2 && <div className='w-full items-center'>
                 <h1 className='text-2xl text-bold text-white text-center mt-5'>Nivel {Number(level_x)}</h1>
                 <h2>{info.title ?? "Titulo en blanco"}</h2>
                 <p>{info.text ?? "Cuerpo del texto"}</p>
                 <div class="aspect-video">
-                <iframe title="vimeo-player" class="w-full h-full" src="https://player.vimeo.com/video/5238050?h=3e9e4971a4" wframeborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen></iframe>
-</div>
+                    <iframe title="vimeo-player" class="w-full h-full" src="https://player.vimeo.com/video/5238050?h=3e9e4971a4" wframeborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
             </div>}
 
             {
