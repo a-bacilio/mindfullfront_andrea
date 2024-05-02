@@ -19,17 +19,17 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     storeUserToken(state, action) {
-      state.user.email = action.payload.email;
-      state.user.name = action.payload.name;
-      state.user.progress = action.payload.progress;
-      state.user.last_completed = action.payload.last_completed;
-      state.user.token = action.payload.token;
-      jsCookie.set("MFM_EMAIL", action.payload.email);
-      jsCookie.set("MFM_NAME", action.payload.name);
-      jsCookie.set("MFM_PROGRESS", action.payload.progress);
-      jsCookie.set("MFM_LASTCOMP", action.payload.last_completed);
-      jsCookie.set("MFM_TOKEN", action.payload.token);
-      window.location = "/level/"+String(niveluser-1);
+      state.user.email = action.payload.data.data.email;
+      state.user.name = action.payload.data.data.name;
+      state.user.level = action.payload.data.data.level;
+      state.user.last_completed = action.payload.data.data.last_completed;
+      state.user.token = action.payload.data.data.token;
+      jsCookie.set("MFM_NAME", action.payload.data.data.name);
+      jsCookie.set("MFM_LEVEL", action.payload.data.data.level);
+      jsCookie.set("MFM_LASTCOMP", action.payload.data.data.last_completed);
+      jsCookie.set("MFM_TOKEN", action.payload.data.data.token);
+      //window.location = "/level/"+String(jsCookie.get("MFM_LEVEL"));
+      //window.location = "/level/1"
     },
     removeUserToken(state) {
       state.user = initialState.user;

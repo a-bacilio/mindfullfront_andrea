@@ -30,10 +30,13 @@ import img27 from "../assets/images/levels/27.png"
 import img28 from "../assets/images/levels/28.png"
 import img29 from "../assets/images/levels/29.png"
 import img30 from "../assets/images/levels/30.png"
-
+import { useGetLevelMutation } from '../app/redux/querys/authquerys'
 
 function Level() {
 
+    
+    const {data, isFetching} = useGetLevelMutation();
+ 
 
     const { level_x } = useParams()
 
@@ -65,6 +68,7 @@ function Level() {
 
     return (
         <div className='w-full h-full'>
+            <h1>Usuario es nivel {isFetching && JSON.stringify(data)} </h1>
             {(card == 0 && info) &&
                 <div className='border-solid border-yellow-100 border-100 w-full h-full flex flex-col justify-center items-center'>
                     <h1 className='mb-8 font-raleway'>{info.title ?? ""}</h1>

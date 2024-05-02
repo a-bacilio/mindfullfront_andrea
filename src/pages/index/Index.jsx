@@ -3,7 +3,7 @@ import { WrapperForm } from '../../components/Form/WrapperForm'
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-
+import jsCookie from "js-cookie";
 import { storeUserToken } from "../../app/redux/slices/authSlice";
 import { usePostLoginUserMutation } from "../../app/redux/querys/authquerys";
 
@@ -21,8 +21,10 @@ function Index() {
         usePostLoginUserMutation();
       const dispatch = useDispatch();
       const onSubmit = async (data) => {
-        console.log(data)
+        console.log(data.email)
+        jsCookie.set("MFM_EMAIL",data.email)
         const response = await postLoginForm(data);
+        console.log(response);
         dispatch(storeUserToken(response));
       };
 

@@ -32,6 +32,9 @@ function Routes() {
             
             <Route
                 path='/clock' element={<Clock />} />
+
+<Route
+                path='/apitest' element={ <Apitest/>} />
         
         </Router>
     )
