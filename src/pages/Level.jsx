@@ -48,7 +48,7 @@ function Level() {
             link_video: "https://player.vimeo.com/video/810735707",
             duration_audio: 350,
             link_audio: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1660314906&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
-            level_img: img1,
+            
         },
         {
             title: "Nivel 1",
@@ -57,7 +57,7 @@ function Level() {
             link_video: "https://player.vimeo.com/video/810735707",
             duration_audio: 350,
             link_audio: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1660314906&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
-            level_img: img2,
+            level_img: img1,
         },
     ]
 
@@ -71,7 +71,7 @@ function Level() {
             <h1>Usuario es nivel {isFetching && JSON.stringify(data)} </h1>
             {(card == 0 && info) &&
                 <div className='border-solid border-yellow-100 border-100 w-full h-full flex flex-col justify-center items-center'>
-                    <h1 className='mb-8 font-raleway'>{info.title ?? ""}</h1>
+                    <h1 className='mb-8 font-raleway text-white text-[60px]'>{info.title ?? ""}</h1>
                     <div className="w-full sm:max-w-80 p-5 border-solid border-red border-100 pt-12 flex flex-col justify-center items-center" >
                         <img src={info.level_img ?? ""}></img>
                         <button className='bg-white mt-8 w-1/2 opacity-65' onClick={() => setCard(1)} >Iniciar meditación</button></div></div>}
