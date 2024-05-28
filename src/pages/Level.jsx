@@ -74,7 +74,7 @@ function Level() {
                     <h1 className='mb-8 font-raleway text-white text-[60px]'>{info.title ?? ""}</h1>
                     <div className="w-full sm:max-w-80 p-5 border-solid border-red border-100 pt-12 flex flex-col justify-center items-center" >
                         <img src={info.level_img ?? ""}></img>
-                        <button className='bg-white mt-8 w-1/2 opacity-65' onClick={() => setCard(1)} >Iniciar meditación</button></div></div>}
+                        <button className='bg-white mt-14 opacity-65 text-[25px] px-8 py-2 rounded mb-12 border border-black' onClick={() => setCard(1)} >Iniciar meditación</button></div></div>}
 
             {card == 1 && <div className='w-full items-center fixed top-0 left-0 w-full h-full flex-center flex-column justify-center z-[100] bg-black'>
                 <div className="relative;"><iframe className="absolute top-0 left-0 w-full h-full" src={info.link_video} frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe></div>
