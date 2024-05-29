@@ -44,23 +44,189 @@ function Level() {
         {
             title: "Nivel 0",
             text: "Lorem ipsum, text 2",
-            duration_video: 300,
-            link_video: "https://player.vimeo.com/video/810735707",
-            duration_audio: 350,
-            link_audio: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1660314906&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
-            
+            link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
         },
+
         {
             title: "Nivel 1",
             text: "Lorem ipsum, text 2",
-            duration_video: 300,
-            link_video: "https://player.vimeo.com/video/810735707",
-            duration_audio: 350,
-            link_audio: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1660314906&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+            link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
             level_img: img1,
         },
-    ]
+        {
+            title: "Nivel 2",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/129920646?h=398078a945",
+            level_img: img2,
+        },
+        {
+            title: "Nivel 3",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
+            level_img: img3,
+        },
 
+        {
+            title: "Nivel 4",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
+            level_img: img4,
+        },
+        {
+            title: "Nivel 5",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/129920646?h=398078a945",
+            level_img: img5,
+        },
+        {
+            title: "Nivel 6",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
+            level_img: img6,
+        },
+
+        {
+            title: "Nivel 7",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
+            level_img: img7,
+        },
+        {
+            title: "Nivel 8",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/129920646?h=398078a945",
+            level_img: img8,
+        },
+        {
+            title: "Nivel 9",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
+            level_img: img9,
+        },
+
+        {
+            title: "Nivel 10",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
+            level_img: img10,
+        },
+        {
+            title: "Nivel 11",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/129920646?h=398078a945",
+            level_img: img11,
+        },
+        {
+            title: "Nivel 12",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
+            level_img: img12,
+        },
+
+        {
+            title: "Nivel 13",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
+            level_img: img13,
+        },
+        {
+            title: "Nivel 14",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/129920646?h=398078a945",
+            level_img: img14,
+        },
+        {
+            title: "Nivel 15",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
+            level_img: img15,
+        },
+
+        {
+            title: "Nivel 1",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
+            level_img: img1,
+        },
+        {
+            title: "Nivel 2",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/129920646?h=398078a945",
+            level_img: img2,
+        },
+        {
+            title: "Nivel 0",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
+        },
+
+        {
+            title: "Nivel 1",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
+            level_img: img1,
+        },
+        {
+            title: "Nivel 2",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/129920646?h=398078a945",
+            level_img: img2,
+        },
+        {
+            title: "Nivel 0",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
+        },
+
+        {
+            title: "Nivel 1",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
+            level_img: img1,
+        },
+        {
+            title: "Nivel 2",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/129920646?h=398078a945",
+            level_img: img2,
+        },
+        {
+            title: "Nivel 0",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
+        },
+
+        {
+            title: "Nivel 1",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
+            level_img: img1,
+        },
+        {
+            title: "Nivel 2",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/129920646?h=398078a945",
+            level_img: img2,
+        },
+        {
+            title: "Nivel 0",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
+        },
+
+        {
+            title: "Nivel 1",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
+            level_img: img1,
+        },
+        {
+            title: "Nivel 2",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/129920646?h=398078a945",
+            level_img: img2,
+        },
+    ]
     const info = levelsData[level_x]
 
     const [state, setState] = useState(true);
@@ -74,23 +240,13 @@ function Level() {
                     <h1 className='mb-8 font-raleway text-white text-[60px]'>{info.title ?? ""}</h1>
                     <div className="w-full sm:max-w-80 p-5 border-solid border-red border-100 pt-12 flex flex-col justify-center items-center" >
                         <img src={info.level_img ?? ""}></img>
-                        <button className='bg-white mt-14 opacity-65 text-[25px] px-8 py-2 rounded mb-12 border border-black' onClick={() => setCard(1)} >Iniciar meditación</button></div></div>}
+                        <button className='bg-white mt-14 opacity-65 text-[25px] text-zinc-500 px-8 py-2 rounded mb-12 border border-zinc-500' onClick={() => setCard(1)} >Iniciar meditación</button></div></div>}
 
             {card == 1 && <div className='w-full items-center fixed top-0 left-0 w-full h-full flex-center flex-column justify-center z-[100] bg-black'>
                 <div className="relative;"><iframe className="absolute top-0 left-0 w-full h-full" src={info.link_video} frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe></div>
                 </div>}
 
-            {card == 2 && <div className='w-full items-center'>
-                <h1 className='text-2xl text-bold text-white text-center mt-5'>Nivel {Number(level_x)}</h1>
-                <h2>{info.title ?? "Titulo en blanco"}</h2>
-                <p>{info.text ?? "Cuerpo del texto"}</p>
-                <div class="aspect-video">
-                    <iframe title="vimeo-player" class="w-full h-full" src="https://player.vimeo.com/video/5238050?h=3e9e4971a4" wframeborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-            </div>}
-
+        
             {
                 !info && <div>No existe datos del nivel</div>
             }

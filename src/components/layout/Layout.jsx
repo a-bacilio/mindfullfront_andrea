@@ -46,11 +46,11 @@ const obtenernivel=()=>{
             </div> }
             </div>
             
-            <div className='border-red border-2 z-1 absolute bg-white h-14 w-full flex flex-row justify-center items-center'>
-                <div className='max-w-4xl w-full  flex flex-row items-center justify-between px-4'>
+            <div className='border-red border-2 z-1 absolute bg-white h-24 w-full flex flex-row justify-center items-center'>
+                <div className='max-w-4xl w-full  flex flex-row items-center justify-between px-12'>
                     <div >
                         <Link to="/" className='cursor-pointer' onClick={() => {setmodal(false)  }}>
-                            <img className='h-10 w-10' src={logo} />
+                            <img className='h-12 w-12' src={logo} />
                         </Link>
 
                     </div>

@@ -36,14 +36,14 @@ import locked from "../assets/images/levels/locked.png"
 
 function Levels() {
 
-    const level=16
+    const level=30
     const images = [
         img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11,img12,img13,img14,img15,img16,img17,img18,img19,img20,img21,img22,img23,img24,img25,img26,img27,img28,img29,img30]
 
   return (
     <div>
         <div className='w-full items-center'>
-            <h1 className='text-2xl text-bold text-white text-center mt-12 mb-12 text-[40px]'>Niveles</h1>
+            <h1 className='text-2xl text-bold text-white text-center mt-20 mb-12 text-[40px]'>Niveles</h1>
         </div>
         <div className='grid lg:grid-cols-6 md:grid-cols-3 grid-cols-3'>
             {images.map((x,i)=><Link key={"link_nivel_"+String(i)} className='w-full flex flex-col items-center justify-centers' to={"/level/"+String(i+1)}>

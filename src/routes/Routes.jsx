@@ -6,7 +6,6 @@ import Level from "../pages/Level";
 import Consent from "../pages/Consent";
 import PSS10 from "../pages/PSS10";
 import Anim from "../pages/Anim";
-import Clock from "../pages/Clock";
 import Mauq from "../pages/Mauq";
 import Apitest from "../pages/Apitest";
 
@@ -34,9 +33,7 @@ function Routes() {
             <Route
                 path='/anim' element={<Anim />} />
             
-            <Route
-                path='/clock' element={<Clock />} />
-
+          
 <Route
                 path='/apitest' element={ <Apitest/>} />
         

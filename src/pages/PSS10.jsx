@@ -10,57 +10,46 @@ function PSS10() {
         <div>
             {card == 0 &&
                 <AnimatePresence>
-                <motion.div
-                  initial={{ x: -400, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 1 }}
-                  exit={{ x: -100, opacity: 0 }}
-                >
-                          <div className="w-full max-w-80 mt-20 mb-8 h-full p-10 overflow-auto bg-rose-400 rounded-lg text-white text-justify">
-                              <h1 className='mb-8'>1. En el último mes, ¿con qué frecuencia ha estado afectado por algo que ha ocurrido inesperadamente?</h1>
-      
-                          </div>
-                          <div>
-                              <label className='flex flex-row w-8 ml-6 space-x-12'>
-                              <input type="radio" name="P1" value="0" />
-                              
-                              <input type="radio" name="P1" value="0" />
-                              
-                              <input type="radio" name="P1" value="0" />
-                              
-                              <input type="radio" name="P1" value="0" />
-                             
-                              <input type="radio" name="P1" value="0" />
-                          
-                              </label>
-                              <div className='flex flex-row'>
-                                <div className='text-center text-sm mt-5'>Nunca</div>
-                              <div className='text-center text-sm mt-5'>Casi nunca</div>
-                              <div className='text-center text-sm mt-5'>De vez en cuando</div>
-                              <div className='text-center text-sm mt-5'>A menudo</div>
-                              <div className='text-center text-sm mt-5'>Muy a menudo</div>
-                              </div>
-                          </div>
-                          <div>
-                              <button className='bg-white mt-8 w-1/2 opacity-65' onClick={() => setCard(1)} >Siguiente</button>
-                          </div>
-                          <div>
-                          <input type="range" min={0} max="100" value="25" className="range" step="25" />
-<div className="w-full flex justify-between text-xs px-2">
-  <span>|</span>
-  <span>|</span>
-  <span>|</span>
-  <span>|</span>
-  <span>|</span>
-</div></div>
-                     
-
-                      
-                </motion.div>
-              </AnimatePresence>
-
+                    <motion.div
+                        initial={{ x: -400, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ delay: 1 }}
+                        exit={{ x: -100, opacity: 0 }}
+                    >
+                        <div className="w-full max-w-80 mt-24 text-center h-full p-10 overflow-auto bg-rose-400 rounded-lg text-white text-lg text-justify">
+                            <h1 class="font-raleway mb-8">1. En el último mes, ¿con qué frecuencia ha estado afectado por algo que ha ocurrido inesperadamente?</h1>
+                            <div className="w-full mt-4 flex flex-col items-center">
+                            <div className="w-full flex justify-between align-center mt-4">
+                                    <p className="text-center mt-3 h-12 w-20">Nunca</p>
+                                
+                                    <p className="text-center h-12 w-20">Muy a menudo</p>
+                                </div><label htmlFor="customRange3" className="sr-only">Custom Range</label>
+                                <input
+                                    type="range"
+                                    className="h-[10px] mt-12 w-48 cursor-pointer appearance-none border-transparent bg-white rounded"
+                                    min="0"
+                                    max="4"
+                                    step="1"
+                                    id="customRange3"
+                                />
+                                <div className="w-full flex justify-between mt-4">
+                                    <p className="text-center h-12 w-12">0</p>
+                                    <p className="text-center h-12 w-12">1</p>
+                                    <p className="text-center h-12 w-12">2</p>
+                                    <p className="text-center h-12 w-12">3</p>
+                                    <p className="text-center h-12 w-12">4</p>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
+                </AnimatePresence>
             }
-
+        
+    
+           <div class="felx flex-row text-center align-center items-center justify-center">
+                <button className='bg-white mt-14 opacity-65 text-[20px] text-zinc-500 px-8 py-2 rounded mb-12 border border-zinc-500' onClick={() => setCard(1)} >Siguiente</button>
+            </div>
+            
             {card == 1 &&
                 <div>
                     <div class="w-full max-w-96 mt-20 mb-8 h-full p-10 overflow-auto bg-rose-400 rounded-lg text-white text-justify">
@@ -70,9 +59,9 @@ function PSS10() {
                     <div>
                         <button className='bg-white mt-8 w-1/2 opacity-65' onClick={() => setCard(2)} >Siguiente</button>
                     </div>
-                    
+
                 </div>
-                
+
 
             }
 
