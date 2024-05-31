@@ -20,7 +20,7 @@ function Routes() {
                 path="/level/:level_x" element={<Level />} />
 
 <Route
-                path="/dinosaurios" element={<Dinosaurios />} />
+                path="/dinosaurios/:dinosaurios_x" element={<Dinosaurios />} />
 
             <Route
                 path='/levels' element={<Levels />} />

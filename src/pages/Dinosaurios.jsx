@@ -30,11 +30,11 @@ function Dinosaurios() {
         const [card, setCard] = useState(0);
         return (
             <div className='w-full h-full'>
-                <div class="flex justify-start"><img src="../src/assets/images/levels/flechai2.png" class="mt-16 mr-8 h-12 w-20"></img></div>
+                <div className="flex justify-start"><img src="../src/assets/images/levels/flechai2.png" className="mt-16 mr-8 h-12 w-20"></img></div>
                 {(card == 0 && info) &&
                     
                         <div className="w-full sm:max-w-80 p-5 border-solid border-red border-100 pt-12 flex flex-col justify-center items-center" >
-                            <img src={info.level_img ?? ""} class="w-80 h-80"></img>
+                            <img src={info.level_img ?? ""} className="w-80 h-80"></img>
                             <button className='bg-white mt-14 opacity-65 text-[25px] text-zinc-500 px-8 py-2 rounded mb-12 border border-zinc-500' onClick={() => setCard(1)} >Iniciar meditación</button></div>}
     
                 {card == 1 && <div className='w-full items-center fixed top-0 left-0 w-full h-full flex-center flex-column justify-center z-[100] bg-black'></div>}
