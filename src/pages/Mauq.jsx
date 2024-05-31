@@ -1,186 +1,134 @@
-import React, { useState } from 'react'
-import { motion, AnimatePresence } from "framer-motion"
+import React, { Component } from "react";
 
-function Mauq() {
-    const [state, setState] = useState(true);
-    const [card, setCard] = useState(0);
+class Mauq extends Component {
+    constructor() {
+        super();
+        this.state = {
+            name: "React"
+        };
+        this.onValueChange = this.onValueChange.bind(this);
+        this.formSubmit = this.formSubmit.bind(this);
+    }
 
+    onValueChange(event) {
+        this.setState({
+            selectedOption: event.target.value
+        });
+    }
 
-    return (
+    formSubmit(event) {
+        event.preventDefault();
+        console.log(this.state.selectedOption)
+    }
+
+    render() {
+        return (
+<div>
+            <div class="w-full max-w-96 mt-16 mb-8 h-fit p-10 overflow-auto bg-teal-600/90 rounded-lg text-white text-justify">
+                <div class="font-raleway text-[30px] text-center">
+                    <h1>mHealth app usability questionnaire </h1>
+                    <p class="text-[20px] mt-16 mb-16">1. La aplicación fue facil de usar</p>
+                    <div class="flex flex-row text-[15px] mb-2 justify-between text-center"><p>En desacuerdo</p>
+                        <p>De acuerdo</p>
+                    </div>
+                    <div class="w-full max-w-96 mt-6 mb-8 h-full p-10 overflow-auto bg-zinc-200/90 rounded-lg text-white text-justify">
+                        <form onSubmit={this.formSubmit}>
+                            <div class="flex flex row text-black justify-between text-center text-[20px]">
+                                <div className="radio">
+                                    <label class="flex flex-col">
+                                        <input
+                                            type="radio"
+                                            value="1"
+                                            checked={this.state.selectedOption === "1"}
+                                            onChange={this.onValueChange}
+                                        />
+                                        1
+                                    </label>
+                                </div>
+                                <div className="radio">
+                                    <label class="flex flex-col">
+                                        <input
+                                            type="radio"
+                                            value="2"
+                                            checked={this.state.selectedOption === "2"}
+                                            onChange={this.onValueChange}
+                                        />
+                                        2
+                                    </label>
+                                </div>
+                                <div className="radio">
+                                    <label class="flex flex-col">
+                                        <input
+                                            type="radio"
+                                            value="3"
+                                            checked={this.state.selectedOption === "3"}
+                                            onChange={this.onValueChange}
+                                        />
+                                        3
+                                    </label>
+                                </div>
+                                <div className="radio">
+                                    <label class="flex flex-col">
+                                        <input
+                                            type="radio"
+                                            value="4"
+                                            checked={this.state.selectedOption === "4"}
+                                            onChange={this.onValueChange}
+                                        />
+                                        4
+                                    </label>
+                                </div>
+                                <div className="radio">
+                                    <label class="flex flex-col">
+                                        <input
+                                            type="radio"
+                                            value="5"
+                                            checked={this.state.selectedOption === "5"}
+                                            onChange={this.onValueChange}
+                                        />
+                                        5
+                                    </label>
+                                </div>
+                                <div className="radio">
+                                    <label class="flex flex-col">
+                                        <input
+                                            type="radio"
+                                            value="6"
+                                            checked={this.state.selectedOption === "6"}
+                                            onChange={this.onValueChange}
+                                        />
+                                        6
+                                    </label>
+                                </div>
+                                <div className="radio">
+                                    <label class="flex flex-col">
+                                        <input
+                                            type="radio"
+                                            value="7"
+                                            checked={this.state.selectedOption === "7"}
+                                            onChange={this.onValueChange}
+                                        />
+                                        7
+                                    </label>
+                                </div></div>
+                            {/*  
         <div>
-            {card == 0 &&
-                <AnimatePresence>
-                <motion.div
-                  initial={{ x: -400, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 1 }}
-                  exit={{ x: -100, opacity: 0 }}
-                >
-                          <div className="w-full max-w-80 mt-20 mb-8 h-full p-10 overflow-auto bg-rose-400 rounded-lg text-white text-justify">
-                              <h1 className='mb-8'>1. En el último mes, ¿con qué frecuencia ha estado afectado por algo que ha ocurrido inesperadamente?</h1>
-      
-                          </div>
-                          <div>
-                              <label className='flex flex-row w-8 ml-6 space-x-12'>
-                              <input type="radio" name="P1" value="0" />
-                              
-                              <input type="radio" name="P1" value="0" />
-                              
-                              <input type="radio" name="P1" value="0" />
-                              
-                              <input type="radio" name="P1" value="0" />
-                             
-                              <input type="radio" name="P1" value="0" />
-                          
-                              </label>
-                              <div className='flex flex-row'>
-                                <div className='text-center text-sm mt-5'>Nunca</div>
-                              <div className='text-center text-sm mt-5'>Casi nunca</div>
-                              <div className='text-center text-sm mt-5'>De vez en cuando</div>
-                              <div className='text-center text-sm mt-5'>A menudo</div>
-                              <div className='text-center text-sm mt-5'>Muy a menudo</div>
-                              </div>
-                          </div>
-                          <div>
-                              <button className='bg-white mt-8 w-1/2 opacity-65' onClick={() => setCard(1)} >Siguiente</button>
-                          </div>
-                          <div>
-                          <input type="range" min={0} max="100" value="25" className="range" step="25" />
-<div className="w-full flex justify-between text-xs px-2">
-  <span>|</span>
-  <span>|</span>
-  <span>|</span>
-  <span>|</span>
-  <span>|</span>
-</div></div>
-                     
-
-                      
-                </motion.div>
-              </AnimatePresence>
-
-            }
-
-            {card == 1 &&
-                <div>
-                    <div class="w-full max-w-96 mt-20 mb-8 h-full p-10 overflow-auto bg-rose-400 rounded-lg text-white text-justify">
-                        <h1 className='mb-8'>2. En el último mes, ¿con qué frecuencia se ha sentido incapaz de controlar las cosas importantes en su vida?</h1>
-
-                    </div>
-                    <div>
-                        <button className='bg-white mt-8 w-1/2 opacity-65' onClick={() => setCard(2)} >Siguiente</button>
-                    </div>
-                    
-                </div>
-                
-
-            }
-
-            {card == 2 &&
-                <div>
-                    <div class="w-full max-w-96 mt-20 mb-8 h-full p-10 overflow-auto bg-rose-400 rounded-lg text-white text-justify">
-                        <h1 className='mb-8'>3. En el último mes, ¿con qué frecuencia se ha sentido nervioso o estresado?</h1>
-
-                    </div>
-                    <div>
-                        <button className='bg-white mt-8 w-1/2 opacity-65' onClick={() => setCard(3)} >Siguiente</button>
-                    </div>
-                </div>
-
-            }
-
-            {card == 3 &&
-                <div>
-                    <div class="w-full max-w-96 mt-20 mb-8 h-full p-10 overflow-auto bg-rose-400 rounded-lg text-white text-justify">
-                        <h1 className='mb-8'>6. En el último mes, ¿con qué frecuencia ha estado seguro sobre su capacidad para manejar sus problemas personales?</h1>
-
-                    </div>
-                    <div>
-                        <button className='bg-white mt-8 w-1/2 opacity-65' onClick={() => setCard(4)} >Siguiente</button>
-                    </div>
-                </div>
-
-            }
-
-            {card == 4 &&
-                <div>
-                    <div class="w-full max-w-96 mt-20 mb-8 h-full p-10 overflow-auto bg-rose-400 rounded-lg text-white text-justify">
-                        <h1 className='mb-8'>7. En el último mes, ¿con qué frecuencia ha sentido que las cosas le van bien?</h1>
-
-                    </div>
-                    <div>
-                        <button className='bg-white mt-8 w-1/2 opacity-65' onClick={() => setCard(5)} >Siguiente</button>
-                    </div>
-                </div>
-
-            }
-
-            {card == 5 &&
-                <div>
-                    <div class="w-full max-w-96 mt-20 mb-8 h-full p-10 overflow-auto bg-rose-400 rounded-lg text-white text-justify">
-                        <h1 className='mb-8'>8. En el último mes, ¿con qué frecuencia ha sentido que no podía afrontar todas las cosas que tenía que hacer?</h1>
-
-                    </div>
-                    <div>
-                        <button className='bg-white mt-8 w-1/2 opacity-65' onClick={() => setCard(6)} >Siguiente</button>
-                    </div>
-                </div>
-
-            }
-
-            {card == 6 &&
-                <div>
-                    <div class="w-full max-w-96 mt-20 mb-8 h-full p-10 overflow-auto bg-rose-400 rounded-lg text-white text-justify">
-                        <h1 className='mb-8'>9. En el último mes, ¿con qué frecuencia ha podido controlar las dificultades de su vida?</h1>
-
-                    </div>
-                    <div>
-                        <button className='bg-white mt-8 w-1/2 opacity-65' onClick={() => setCard(7)} >Siguiente</button>
-                    </div>
-                </div>
-
-            }
-
-            {card == 7 &&
-                <div>
-                    <div class="w-full max-w-96 mt-20 mb-8 h-full p-10 overflow-auto bg-rose-400 rounded-lg text-white text-justify">
-                        <h1 className='mb-8'>10. En el ultimo mes, ¿con que frecuencia se ha sentido que tenia todo bajo control?</h1>
-
-                    </div>
-                    <div>
-                        <button className='bg-white mt-8 w-1/2 opacity-65' onClick={() => setCard(8)} >Siguiente</button>
-                    </div>
-                </div>
-
-            }
-
-            {card == 8 &&
-                <div>
-                    <div class="w-full max-w-96 mt-20 mb-8 h-full p-10 overflow-auto bg-rose-400 rounded-lg text-white text-justify">
-                        <h1 className='mb-8'>11. En el último mes, ¿con qué frecuencia ha estado enfadado porque  las cosas que le han ocurrido estaban fuera de su control?</h1>
-
-                    </div>
-                    <div>
-                        <button className='bg-white mt-8 w-1/2 opacity-65' onClick={() => setCard(9)} >Siguiente</button>
-                    </div>
-                </div>
-
-            }
-
-            {card == 9 &&
-                <div>
-                    <div class="w-full max-w-96 mt-20 mb-8 h-full p-10 overflow-auto bg-rose-400 rounded-lg text-white text-justify">
-                        <h1 className='mb-8'>14. En el último mes, ¿con qué frecuencia ha sentido que las dificultades se acumulan tanto que no puede superarlas?</h1>
-
-                    </div>
-                    <div>
-                        <button className='bg-white mt-8 w-1/2 opacity-65' onClick={() => setCard(10)} >Siguiente</button>
-                    </div>
-                </div>
-
-            }
+          Selected option is : {this.state.selectedOption}
         </div>
-    )
+        <button className="btn btn-default" type="submit">
+          Submit
+        </button>*/}
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <div className="flex justify-center items-center mt-8 mb-20">
+                    <button className="bg-white w-1/2 opacity-65 p-2 rounded">Finalizar</button>
+                </div>
+</div>
+        );
+    }
 }
 
-export default Mauq
+export default Mauq;

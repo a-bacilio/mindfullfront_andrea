@@ -234,10 +234,10 @@ function Level() {
 
     return (
         <div className='w-full h-full'>
-            <h1>Usuario es nivel {isFetching && JSON.stringify(data)} </h1>
+            <div class="flex justify-end"><button onClick={() => navigate("../src/pages/Dinosaurios")}><img src="../src/assets/images/levels/mas 2.png" class="mt-16 mr-8 h-12 w-20"></img></button></div>
             {(card == 0 && info) &&
-                <div className='border-solid border-yellow-100 border-100 w-full h-full flex flex-col justify-center items-center'>
-                    <h1 className='mb-8 font-raleway text-white text-[60px]'>{info.title ?? ""}</h1>
+                <div className='border-solid border-yellow-100 border-100 w-full flex flex-col justify-center items-center'>
+                    <h1 className='mb-4 font-raleway text-white text-[60px]'>{info.title ?? ""}</h1>
                     <div className="w-full sm:max-w-80 p-5 border-solid border-red border-100 pt-12 flex flex-col justify-center items-center" >
                         <img src={info.level_img ?? ""}></img>
                         <button className='bg-white mt-14 opacity-65 text-[25px] text-zinc-500 px-8 py-2 rounded mb-12 border border-zinc-500' onClick={() => setCard(1)} >Iniciar meditación</button></div></div>}

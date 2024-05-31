@@ -8,6 +8,7 @@ import PSS10 from "../pages/PSS10";
 import Anim from "../pages/Anim";
 import Mauq from "../pages/Mauq";
 import Apitest from "../pages/Apitest";
+import Dinosaurios from "../pages/Dinosaurios";
 
 function Routes() {
     return (
@@ -17,6 +18,9 @@ function Routes() {
 
             <Route
                 path="/level/:level_x" element={<Level />} />
+
+<Route
+                path="/dinosaurios" element={<Dinosaurios />} />
 
             <Route
                 path='/levels' element={<Levels />} />
@@ -32,6 +36,7 @@ function Routes() {
            
             <Route
                 path='/anim' element={<Anim />} />
+
             
           
 <Route
