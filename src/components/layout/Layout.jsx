@@ -28,13 +28,16 @@ const obtenernivel=()=>{
             { (modal & !about ) && <div className=' w-full h-full absolute flex flex-col items-center justify-center top-14 left-0'>
                 <div className='w-full max-w-3xl py-2 flex flex-col items-center justify-center  rounded-xl text-center'>
                     <div className='text-white'>
-                        <h1 className='text-3xl text-bold'>
+                        <h1 className='text-[40px] text-bold font-raleway mb-16'>
                             Configuración
                         </h1>
-                        <div className='bg-red-300 px-2 py-1 rounded-lg mt-4'>
+                        <div className='text-[20px] font-raleway mt-8 bg-rose-400 px-2 py-1 rounded-lg mt-4'>
+                            La técnica
+                        </div>
+                        <div className='text-[20px] font-raleway mt-8 bg-rose-400 px-2 py-1 rounded-lg mt-4'>
                             Notificaciones
                         </div>
-                        <div className='bg-red-300 px-2 py-1 rounded-lg mt-4' onClick={()=>setAbout(true)}>
+                        <div className='text-[20px] font-raleway mt-8 bg-rose-400 px-2 py-1 rounded-lg mt-4 mb-16' onClick={()=>setAbout(true)}>
                             Sobre nosotros
                         </div>
 

@@ -143,88 +143,98 @@ function Level() {
         },
 
         {
-            title: "Nivel 1",
+            title: "Nivel 16",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
-            level_img: img1,
+            level_img: img16,
         },
         {
-            title: "Nivel 2",
+            title: "Nivel 17",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/129920646?h=398078a945",
-            level_img: img2,
+            level_img: img17,
         },
         {
-            title: "Nivel 0",
+            title: "Nivel 18",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
+            level_img: img18,
         },
 
         {
-            title: "Nivel 1",
+            title: "Nivel 19",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
-            level_img: img1,
+            level_img: img19,
         },
         {
-            title: "Nivel 2",
+            title: "Nivel 20",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/129920646?h=398078a945",
-            level_img: img2,
+            level_img: img20,
         },
         {
-            title: "Nivel 0",
+            title: "Nivel 21",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
+            level_img: img21,
         },
 
         {
-            title: "Nivel 1",
+            title: "Nivel 22",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
-            level_img: img1,
+            level_img: img22,
         },
         {
-            title: "Nivel 2",
+            title: "Nivel 23",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/129920646?h=398078a945",
-            level_img: img2,
+            level_img: img23,
         },
         {
-            title: "Nivel 0",
+            title: "Nivel 24",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
+            level_img: img24,
         },
 
         {
-            title: "Nivel 1",
+            title: "Nivel 25",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
-            level_img: img1,
+            level_img: img25,
         },
         {
-            title: "Nivel 2",
+            title: "Nivel 26",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/129920646?h=398078a945",
-            level_img: img2,
+            level_img: img26,
         },
         {
-            title: "Nivel 0",
+            title: "Nivel 27",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
+            level_img: img27,
         },
 
         {
-            title: "Nivel 1",
+            title: "Nivel 28",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
-            level_img: img1,
+            level_img: img28,
         },
         {
-            title: "Nivel 2",
+            title: "Nivel 29",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/129920646?h=398078a945",
-            level_img: img2,
+            level_img: img29,
+        },
+        {
+            title: "Nivel 30",
+            text: "Lorem ipsum, text 2",
+            link_video: "https://player.vimeo.com/video/129920646?h=398078a945",
+            level_img: img30,
         },
     ]
     const info = levelsData[level_x]
@@ -234,13 +244,13 @@ function Level() {
 
     return (
         <div className='w-full h-full'>
-            <div class="flex justify-end"><button onClick={() => navigate("../src/pages/Dinosaurios")}><img src="../src/assets/images/levels/mas 2.png" class="mt-16 mr-8 h-12 w-20"></img></button></div>
+            <div className="flex justify-end"><button onClick={event =>  window.location.href='../dinosaurios/1'}><img src="../src/assets/images/levels/mas 2.png" className="mt-16 mr-8 h-12 w-20"></img></button></div>
             {(card == 0 && info) &&
                 <div className='border-solid border-yellow-100 border-100 w-full flex flex-col justify-center items-center'>
                     <h1 className='mb-4 font-raleway text-white text-[60px]'>{info.title ?? ""}</h1>
                     <div className="w-full sm:max-w-80 p-5 border-solid border-red border-100 pt-12 flex flex-col justify-center items-center" >
-                        <img src={info.level_img ?? ""}></img>
-                        <button className='bg-white mt-14 opacity-65 text-[25px] text-zinc-500 px-8 py-2 rounded mb-12 border border-zinc-500' onClick={() => setCard(1)} >Iniciar meditación</button></div></div>}
+                        <img src={info.level_img ?? ""} ></img>
+                        <button className='bg-white mt-14 opacity-65 text-[25px] text-zinc-500 px-8 py-2 rounded mb-12 border border-black' onClick={() => setCard(1)} >Iniciar meditación</button></div></div>}
 
             {card == 1 && <div className='w-full items-center fixed top-0 left-0 w-full h-full flex-center flex-column justify-center z-[100] bg-black'>
                 <div className="relative;"><iframe className="absolute top-0 left-0 w-full h-full" src={info.link_video} frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe></div>
