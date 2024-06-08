@@ -53,13 +53,13 @@ export const authAPI = createApi({
       }),
       transformResponse: (response) => response,
     }),
-    getLevel: builder.mutation({
+    getLevel: builder.query({
       query: () => ({
         url: "/getlevel",
-        method: "get",
+        method: "post",
         headers:{
           Accept: "aplication/json",
-          Authorization: "Bearer "+string(jsCookie.get("MFM_TOKEN"))
+          Authorization: "Bearer "+String(jsCookie.get("MFM_TOKEN"))
         },
         body: {
           email : jsCookie.get("MFM_EMAIL")
@@ -76,5 +76,5 @@ export const {
   usePostLoginUserMutation,
   usePostRegisterUserMutation,
   usePostRecoverQuestionsMutation,
-  useGetLevelMutation
+  useGetLevelQuery
 } = authAPI;

@@ -6,12 +6,12 @@ import dinosaurio3 from "../assets/images/levels/frame3.png"
 import dinosaurio4 from "../assets/images/levels/frame4.png"
 import dinosaurio5 from "../assets/images/levels/frame5.png"
 import dinosaurio6 from "../assets/images/levels/frame6.2.png"
-import { useGetLevelMutation } from '../app/redux/querys/authquerys'
+import { useGetLevelQuery } from '../app/redux/querys/authquerys'
 
 function Dinosaurios() {
 
     
-    const {data, isFetching} = useGetLevelMutation();
+    const {data, isFetching} = useGetLevelQuery();
  
 
     const { dinosaurios_x } = useParams()

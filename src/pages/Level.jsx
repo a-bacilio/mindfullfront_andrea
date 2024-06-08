@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import img1 from "../assets/images/levels/1.png"
 import img2 from "../assets/images/levels/2.png"
@@ -30,15 +30,25 @@ import img27 from "../assets/images/levels/27.png"
 import img28 from "../assets/images/levels/28.png"
 import img29 from "../assets/images/levels/29.png"
 import img30 from "../assets/images/levels/30.png"
-import { useGetLevelMutation } from '../app/redux/querys/authquerys'
+import { useGetLevelQuery } from '../app/redux/querys/authquerys'
 
 function Level() {
 
     
-    const {data, isFetching} = useGetLevelMutation();
+    const {data:dataLevel, isFetching:isFetchingLevel} = useGetLevelQuery();
  
 
     const { level_x } = useParams()
+
+
+    useEffect(() => {
+        console.log({dataLevel,level_x})
+        if (dataLevel && dataLevel.data && dataLevel.data.level <level_x){
+            window.alert("Este nivel no te corresponde")
+            window.location = "/levels"
+        }
+    },[dataLevel])
+
 
     const levelsData = [
         {
