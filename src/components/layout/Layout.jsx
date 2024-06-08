@@ -11,7 +11,8 @@ import settings from "../../assets/icons/settings.png"
 function Layout({ children }) {
 
     const [modal, setmodal] = useState(false);
-    const [about, setAbout] = useState(false);
+  
+
 
 const obtenernivel=()=>{
     
@@ -24,8 +25,8 @@ const obtenernivel=()=>{
                 <img className='w-full fixed top-0 left-0 h-full' src={bg_image} />
             </div>
             <div className='pt-14 absolute w-full h-full top-0 left-0 flex flex-col items-center'>
-            { (!modal & !about) && children }
-            { (modal & !about ) && <div className=' w-full h-full absolute flex flex-col items-center justify-center top-14 left-0'>
+            { (!modal) && children }
+            { (modal ) && <div className=' w-full h-full absolute flex flex-col items-center justify-center top-14 left-0'>
                 <div className='w-full max-w-3xl py-2 flex flex-col items-center justify-center  rounded-xl text-center'>
                     <div className='text-white'>
                         <h1 className='text-[40px] text-bold font-raleway mb-16'>
@@ -37,16 +38,14 @@ const obtenernivel=()=>{
                         <div className='text-[20px] font-raleway mt-8 bg-rose-400 px-2 py-1 rounded-lg mt-4'>
                             Notificaciones
                         </div>
-                        <div className='text-[20px] font-raleway mt-8 bg-rose-400 px-2 py-1 rounded-lg mt-4 mb-16' onClick={()=>setAbout(true)}>
+                        <div className='text-[20px] font-raleway mt-8 bg-rose-400 px-2 py-1 rounded-lg mt-4 mb-16' >
                             Sobre nosotros
                         </div>
 
                     </div>
                 </div>
             </div>  }
-            { (modal & about) && <div>
-                Acerca de
-            </div> }
+
             </div>
             
             <div className='border-red border-2 z-1 absolute bg-white h-24 w-full flex flex-row justify-center items-center'>
