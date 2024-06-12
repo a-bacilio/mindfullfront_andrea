@@ -31,6 +31,7 @@ import img28 from "../assets/images/levels/28.png"
 import img29 from "../assets/images/levels/29.png"
 import img30 from "../assets/images/levels/30.png"
 import { useGetLevelQuery } from '../app/redux/querys/authquerys'
+import LoadNextPageButton from '../components/LoadNextPageButton'
 
 function Level() {
 
@@ -55,6 +56,7 @@ function Level() {
             title: "Nivel 0",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
+            time: 5000
         },
 
         {
@@ -62,6 +64,7 @@ function Level() {
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
             level_img: img1,
+            time:5000
         },
         {
             title: "Nivel 2",
@@ -251,19 +254,25 @@ function Level() {
 
     const [state, setState] = useState(true);
     const [card, setCard] = useState(0);
+    
+
+    console.log(info.time)
 
     return (
         <div className='w-full h-full'>
+            
             <div className="flex justify-end"><button onClick={event =>  window.location.href='../dinosaurios/1'}><img src="../src/assets/images/levels/mas 2.png" className="mt-16 mr-8 h-12 w-20"></img></button></div>
             {(card == 0 && info) &&
                 <div className='border-solid border-yellow-100 border-100 w-full flex flex-col justify-center items-center'>
                     <h1 className='mb-4 font-raleway text-white text-[60px]'>{info.title ?? ""}</h1>
+                    
                     <div className="w-full sm:max-w-80 p-5 border-solid border-red border-100 pt-12 flex flex-col justify-center items-center" >
                         <img src={info.level_img ?? ""} ></img>
                         <button className='bg-white mt-14 opacity-65 text-[25px] text-zinc-500 px-8 py-2 rounded mb-12 border border-black' onClick={() => setCard(1)} >Iniciar meditación</button></div></div>}
 
             {card == 1 && <div className='w-full items-center fixed top-0 left-0 w-full h-full flex-center flex-column justify-center z-[100] bg-black'>
-                <div className="relative;"><iframe className="absolute top-0 left-0 w-full h-full" src={info.link_video} frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe></div>
+                <div className="relative;"><iframe className="absolute top-0 left-0 w-full h-full" src={info.link_video} frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
+                <LoadNextPageButton time={0 || info.time} /></div>
                 </div>}
 
         
