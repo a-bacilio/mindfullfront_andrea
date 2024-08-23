@@ -71,12 +71,14 @@ function Level() {
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/129920646?h=398078a945",
             level_img: img2,
+            time:5000
         },
         {
             title: "Nivel 3",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
             level_img: img3,
+            time:5000
         },
 
         {
@@ -84,12 +86,14 @@ function Level() {
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
             level_img: img4,
+            time:5000
         },
         {
             title: "Nivel 5",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/129920646?h=398078a945",
             level_img: img5,
+            time:5000
         },
         {
             title: "Nivel 6",
@@ -269,11 +273,11 @@ function Level() {
                     
                     <div className="w-full sm:max-w-80 p-5 border-solid border-red border-100 pt-12 flex flex-col justify-center items-center" >
                         <img src={info.level_img ?? ""} ></img>
-                        <button className='bg-white mt-14 opacity-65 text-[25px] text-zinc-500 px-8 py-2 rounded mb-12 border border-black' onClick={() => setCard(1)} >Iniciar meditación</button></div></div>}
+                        <button className='bg-white mt-14 opacity-65 text-[25px] text-zinc-500 px-8 py-2 rounded mb-12 border border-black' onClick={() => setCard(1)} >{(dataLevel&& dataLevel.data && dataLevel.data.level) && (dataLevel.data.level<level_x) ? ("Aun faltan "+String(24*3600-Number(dataLevel&& dataLevel.data && dataLevel.data.time_passed))+" segundos"):"Iniciar  meditacion"}</button></div></div>}
 
             {card == 1 && <div className='w-full items-center fixed top-0 left-0 w-full h-full flex-center flex-column justify-center z-20 bg-black'>
                 <div className="relative;"><iframe className="absolute top-0 left-0 w-full h-full" src={info.link_video} frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
-                <LoadNextPageButton time={0 || info.time} /></div>
+                <LoadNextPageButton time={0 || info.time} next_level={String(Number(level_x)+1)} data={dataLevel}/></div>
                 </div>}
 
         

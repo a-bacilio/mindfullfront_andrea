@@ -3,7 +3,7 @@ import { usePostUpdateLevelMutation } from '../app/redux/querys/authquerys';
 import jsCookie from "js-cookie";
 
 
-function LoadNextPageButton({time}) {
+function LoadNextPageButton({time,next_level}) {
     const [nextButton,setNextButton] = useState(false);
 
     const [postUpdateLevel, { isSuccess, isError, isLoading, error }] =
@@ -15,7 +15,7 @@ function LoadNextPageButton({time}) {
         jsCookie.set("MFM_LEVEL", response.data.level);
         jsCookie.set("MFM_LASTCOMP", response.data.last_completed);
         window.alert( "Felicidades, ahora te toca el nivel " + JSON.stringify(response.data.level+1) + " despues de que se cumplan 24 horas" );
-        window.location="/levels";
+        window.location="/level/"+next_level;
       }
       if(error && error.data && error.data.error){
         window.alert(error.data.error)
@@ -27,7 +27,7 @@ function LoadNextPageButton({time}) {
             setNextButton(true);
         }, time);
         return () => clearTimeout(timeoutId);
-      }, []); 
+      }, []);
 
 
   return (
