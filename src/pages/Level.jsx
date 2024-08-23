@@ -36,7 +36,7 @@ import LoadNextPageButton from '../components/LoadNextPageButton'
 function Level() {
 
     
-    const {data:dataLevel, isFetching:isFetchingLevel} = useGetLevelQuery();
+    const {data:dataLevel, isFetching:isFetchingLevel} = useGetLevelQuery({refetchOnMountOrArgChange: true});
  
 
     const { level_x } = useParams()
@@ -45,8 +45,8 @@ function Level() {
     useEffect(() => {
         console.log({dataLevel,level_x})
         if (dataLevel && dataLevel.data && dataLevel.data.level <level_x){
-            window.alert("Este nivel no te corresponde")
-            window.location = "/levels"
+            //window.alert("Este nivel no te corresponde")
+            //window.location = "/levels"
         }
     },[dataLevel])
 
@@ -250,6 +250,7 @@ function Level() {
             level_img: img30,
         },
     ]
+
     const info = levelsData[level_x]
 
     const [state, setState] = useState(true);
@@ -270,7 +271,7 @@ function Level() {
                         <img src={info.level_img ?? ""} ></img>
                         <button className='bg-white mt-14 opacity-65 text-[25px] text-zinc-500 px-8 py-2 rounded mb-12 border border-black' onClick={() => setCard(1)} >Iniciar meditación</button></div></div>}
 
-            {card == 1 && <div className='w-full items-center fixed top-0 left-0 w-full h-full flex-center flex-column justify-center z-[100] bg-black'>
+            {card == 1 && <div className='w-full items-center fixed top-0 left-0 w-full h-full flex-center flex-column justify-center z-20 bg-black'>
                 <div className="relative;"><iframe className="absolute top-0 left-0 w-full h-full" src={info.link_video} frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
                 <LoadNextPageButton time={0 || info.time} /></div>
                 </div>}

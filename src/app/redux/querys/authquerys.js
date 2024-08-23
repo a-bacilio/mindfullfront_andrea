@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import jsCookie from "js-cookie";
 import { string } from "yup";
+import checktoken from "../middlewares/checktoken";
 
 
 export const authAPI = createApi({
@@ -24,7 +25,7 @@ export const authAPI = createApi({
       query: ({ name, email, password, password_confirmation, question_1, question_2, answer_1, answer_2 }) => ({
         url: "/register",
         method: "post",
-        headers:{
+        headers: {
           Accept: "aplication/json"
         },
         body: {
@@ -44,7 +45,7 @@ export const authAPI = createApi({
       query: ({ email }) => ({
         url: "/recoverquestions",
         method: "post",
-        headers:{
+        headers: {
           Accept: "aplication/json"
         },
         body: {
@@ -57,17 +58,38 @@ export const authAPI = createApi({
       query: () => ({
         url: "/getlevel",
         method: "post",
-        headers:{
+        headers: {
           Accept: "aplication/json",
-          Authorization: "Bearer "+String(jsCookie.get("MFM_TOKEN"))
+          Authorization: "Bearer " + String(jsCookie.get("MFM_TOKEN"))
         },
         body: {
-          email : jsCookie.get("MFM_EMAIL")
+          email: jsCookie.get("MFM_EMAIL")
         },
       }),
       transformResponse: (response) => {
-        console.log(response);
-        return response},
+        return response
+      },
+      transformErrorResponse: (error) => {
+        checktoken(error);
+        return error;
+      }
+    }),
+    postUpdateLevel: builder.mutation({
+      query: () => ({
+        url: "/updatelevel",
+        method: "post",
+        headers: {
+          Accept: "aplication/json",
+          Authorization: "Bearer " + String(jsCookie.get("MFM_TOKEN"))
+        }
+      }),
+      transformResponse: (response) => {
+        return response
+      },
+      transformErrorResponse: (error) => {
+        checktoken(error);
+        return error;
+      }
     }),
   }),
 });
@@ -76,5 +98,6 @@ export const {
   usePostLoginUserMutation,
   usePostRegisterUserMutation,
   usePostRecoverQuestionsMutation,
-  useGetLevelQuery
+  useGetLevelQuery,
+  usePostUpdateLevelMutation
 } = authAPI;
