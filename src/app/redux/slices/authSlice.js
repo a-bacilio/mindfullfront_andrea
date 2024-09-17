@@ -28,8 +28,7 @@ const authSlice = createSlice({
       jsCookie.set("MFM_LEVEL", action.payload.data.data.level);
       jsCookie.set("MFM_LASTCOMP", action.payload.data.data.last_completed);
       jsCookie.set("MFM_TOKEN", action.payload.data.data.token);
-      //window.location = "/level/"+String(jsCookie.get("MFM_LEVEL"));
-      //window.location = "/level/1"
+      window.location = "/level/"+String(jsCookie.get("MFM_LEVEL"));
     },
     removeUserToken(state) {
       state.user = initialState.user;

@@ -32,6 +32,7 @@ import img29 from "../assets/images/levels/29.png"
 import img30 from "../assets/images/levels/30.png"
 import { useGetLevelQuery } from '../app/redux/querys/authquerys'
 import LoadNextPageButton from '../components/LoadNextPageButton'
+import CountdownTimer from '../components/CountdownTimer'
 
 function Level() {
 
@@ -45,9 +46,12 @@ function Level() {
     useEffect(() => {
         console.log({dataLevel,level_x})
         if (dataLevel && dataLevel.data && dataLevel.data.level <level_x){
-            //window.alert("Este nivel no te corresponde")
-            //window.location = "/levels"
+            window.alert("Este nivel no te corresponde")
+            window.location = "/levels"
+        } else if (dataLevel && dataLevel.data && dataLevel.data.level >level_x && card==0){
+          setCard(1)  
         }
+        
     },[dataLevel])
 
 
@@ -64,7 +68,7 @@ function Level() {
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
             level_img: img1,
-            time:5000
+            time: 5000
         },
         {
             title: "Nivel 2",
@@ -260,7 +264,8 @@ function Level() {
     const [state, setState] = useState(true);
     const [card, setCard] = useState(0);
     
-
+    const currentLevel = Number(level_x); // Ensure level_x is a number
+    
     console.log(info.time)
 
     return (
@@ -273,11 +278,27 @@ function Level() {
                     
                     <div className="w-full sm:max-w-80 p-5 border-solid border-red border-100 pt-12 flex flex-col justify-center items-center" >
                         <img src={info.level_img ?? ""} ></img>
-                        <button className='bg-white mt-14 opacity-65 text-[25px] text-zinc-500 px-8 py-2 rounded mb-12 border border-black' onClick={() => setCard(1)} >{(dataLevel&& dataLevel.data && dataLevel.data.level) && (dataLevel.data.level<level_x) ? ("Aun faltan "+String(24*3600-Number(dataLevel&& dataLevel.data && dataLevel.data.time_passed))+" segundos"):"Iniciar  meditacion"}</button></div></div>}
+                        <button className='bg-white mt-14 opacity-35 text-[25px] text-zinc-500 
+                        px-8 py-2 rounded mb-12 border border-black' disabled
+                            ><CountdownTimer 
+                         initialTime={(dataLevel&& dataLevel.data && dataLevel.data.time_passed) ?
+                          (60*60*24-Number(dataLevel&& dataLevel.data && dataLevel.data.time_passed)):0} currentLevel={currentLevel} setCard={setCard}/>
+                          </button><div>{JSON.stringify(dataLevel)}</div></div></div>}
 
-            {card == 1 && <div className='w-full items-center fixed top-0 left-0 w-full h-full flex-center flex-column justify-center z-20 bg-black'>
+                        {(card == 1 && info) &&
+                <div className='border-solid border-yellow-100 border-100 w-full flex flex-col justify-center items-center'>
+                    <h1 className='mb-4 font-raleway text-white text-[60px]'>{info.title ?? ""}</h1>
+                    
+                    <div className="w-full sm:max-w-80 p-5 border-solid border-red border-100 pt-12 flex flex-col justify-center items-center" >
+                        <img src={info.level_img ?? ""} ></img>
+                        <button className='bg-white mt-14 opacity-35 text-[25px] text-zinc-500 
+                        px-8 py-2 rounded mb-12 border border-black' onClick={() => setCard(2)}
+                         >Iniciar meditacion
+                          </button></div></div>} 
+
+            {card == 2 && <div className='w-full items-center fixed top-0 left-0 w-full h-full flex-center flex-column justify-center z-20 bg-black'>
                 <div className="relative;"><iframe className="absolute top-0 left-0 w-full h-full" src={info.link_video} frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
-                <LoadNextPageButton time={0 || info.time} next_level={String(Number(level_x)+1)} data={dataLevel}/></div>
+                <LoadNextPageButton time={0 || info.time} next_level={String(Number(level_x)+1)} data={dataLevel} setCard={setCard}/></div>
                 </div>}
 
         
