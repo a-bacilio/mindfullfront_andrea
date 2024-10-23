@@ -43,7 +43,14 @@ function Index() {
         <button type="submit" className="mt-16 text-xl text-white px-6 py-2 rounded mb-4 bg-rose-400 border border-black">
             Ingresar
         </button>
+        <div className="w-full items-center flex flex-row justify-center">
+        <Link to="/register"  className=" text-xl text-white px-6 py-2 rounded mb-4 bg-rose-400 border border-black">
+            Registrarse
+        </Link>
+        </div>
         </form>
+        
+        
     </div>
   )
 }

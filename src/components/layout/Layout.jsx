@@ -1,9 +1,10 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Link } from "react-router-dom";
 import bg_image from "../../assets/images/bg.png"
 import logo from "../../assets/icons/logo.png"
 import level from "../../assets/icons/level.png"
 import settings from "../../assets/icons/settings.png"
+import jsCookie from "js-cookie";
 
 
 
@@ -11,8 +12,16 @@ import settings from "../../assets/icons/settings.png"
 function Layout({ children }) {
 
     const [modal, setmodal] = useState(false);
-  
+    const [levelHome, setlevelHome]=useState("");
+    
+    useEffect(() => {
+      setlevelHome(jsCookie.get("MFM_LEVEL"))
+    }, [])
+    
 
+    
+    
+    
 
 const obtenernivel=()=>{
     
@@ -25,10 +34,12 @@ const obtenernivel=()=>{
                 <img className='w-full fixed top-0 left-0 h-full' src={bg_image} />
             </div>
             <div className='pt-14 absolute w-full h-full top-0 left-0 flex flex-col items-center'>
+            
             { (!modal) && children }
             { (modal ) && <div className=' w-full h-full absolute flex flex-col items-center justify-center top-14 left-0'>
                 <div className='w-full max-w-3xl py-2 flex flex-col items-center justify-center  rounded-xl text-center'>
                     <div className='text-white'>
+                        
                         <h1 className='text-[40px] text-bold font-raleway mb-16'>
                             Configuración
                         </h1>
@@ -51,7 +62,7 @@ const obtenernivel=()=>{
             <div className='border-red border-2 z-1 absolute bg-white h-24 w-full flex flex-row justify-center items-center'>
                 <div className='max-w-4xl w-full  flex flex-row items-center justify-between px-12'>
                     <div >
-                        <Link to="/" className='cursor-pointer' onClick={() => {setmodal(false)  }}>
+                        <Link to={levelHome!="" ? "level/"&levelHome: "/" } className='cursor-pointer' onClick={() => {setmodal(false)  }}>
                             <img className='h-12 w-12' src={logo} />
                         </Link>
 

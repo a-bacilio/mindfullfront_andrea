@@ -8,12 +8,16 @@ import Anim from "../pages/Anim";
 import Mauq from "../pages/Mauq";
 import Apitest from "../pages/Apitest";
 import Dinosaurios from "../pages/Dinosaurios";
+import Register from "../pages/register/Register";
 
 function Routes() {
     return (
         <Router>
             <Route
                 path='/' element={<Index />} />
+
+            <Route
+                path='/register' element={<Register />} />
 
             <Route
                 path="/level/:level_x" element={<Level />} />
