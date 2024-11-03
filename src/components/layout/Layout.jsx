@@ -45,7 +45,7 @@ const obtenernivel=()=>{
                         <h1 className='text-[40px] text-bold font-raleway mb-8'>
                             Más información
                         </h1>
-                        {card !== 2 && (<div><button className='text-[30px] font-raleway mt-8 bg-rose-400 px-2 py-1 rounded-lg w-60 mb-2' onClick={() => setCard(1)}>La técnica</button>
+                        {card !== 2 && (<div><button className='text-[30px] font-raleway mt-8 bg-rose-400 px-2 py-1 rounded-lg w-60 mb-2' onClick={() => {if(card==1){setCard(0)}else{setCard(1)}}}>La técnica</button>
                             
                         </div>)}
                         {card == 1 &&<div className="w-full max-w-80 mt-12 text-center h-80 p-10 overflow-y-auto bg-rose-400 rounded-lg text-white text-lg">
@@ -55,7 +55,7 @@ const obtenernivel=()=>{
                                 <div className='mt-6'>El mindfulness tiene evidencia de capacidad superior de producir mejoras en la salud que educación en salud, terapia de relajación y psicoterapia de apoyo. Mientras que es comparable a los efectos de terapia cognitivo conductual.</div>
                                 <div className='mt-6'>Los mecanismos por los cuales el mindfulness impacta a la salud mental aún se encuentran en estudio. Sin embargo, se han observado cambios en el procesamiento cerebral.</div>
                                 <div className='mt-6'>Estudios de resonancia magnética funcional demuestran cambios en la corteza prefrontal, la corteza cingulada, la ínsula y el hipocampo. Además, se mostraron cambios en la amígdala asociada con la regulación de emociones.</div></h1></div>}
-                            {card !== 1 && (<div><button className='text-[30px] font-raleway mt-4 bg-rose-400 px-2 py-1 rounded-lg w-60' onClick={() => setCard(2)}>Sobre nosotros</button>
+                            {card !== 1 && (<div><button className='text-[30px] font-raleway mt-4 bg-rose-400 px-2 py-1 rounded-lg w-60' onClick={() => {if(card==2){setCard(0)}else{setCard(2)}}}>Sobre nosotros</button>
                             
                             </div>)}
                             {card == 2 &&<div className="w-full max-w-80 mt-12 h-96 p-10 overflow-y-auto bg-rose-400 rounded-lg text-white text-lg text-left">
