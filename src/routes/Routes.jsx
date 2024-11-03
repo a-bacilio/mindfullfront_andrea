@@ -9,6 +9,7 @@ import Mauq from "../pages/Mauq";
 import Apitest from "../pages/Apitest";
 import Dinosaurios from "../pages/Dinosaurios";
 import Register from "../pages/register/Register";
+import Recover from "../pages/recover/Recover";
 
 function Routes() {
     return (
@@ -18,6 +19,9 @@ function Routes() {
 
             <Route
                 path='/register' element={<Register />} />
+
+            <Route
+                path='/recover' element={<Recover />} />
 
             <Route
                 path="/level/:level_x" element={<Level />} />

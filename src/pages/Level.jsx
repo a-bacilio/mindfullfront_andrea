@@ -37,19 +37,20 @@ import CountdownTimer from '../components/CountdownTimer'
 function Level() {
 
     
-    const {data:dataLevel, isFetching:isFetchingLevel} = useGetLevelQuery({refetchOnMountOrArgChange: true});
+    const {data:dataLevel, isFetching:isFetchingLevel, refetch} = useGetLevelQuery({refetchOnMountOrArgChange: true});
  
 
     const { level_x } = useParams()
 
 
     useEffect(() => {
-        console.log({dataLevel,level_x})
-        if (dataLevel && dataLevel.data && dataLevel.data.level <level_x){
+        refetch();
+        console.log({dataLevel,level_x});
+        if (dataLevel && dataLevel != "undefined" && dataLevel != undefined && dataLevel.data && dataLevel.data.level <level_x-1){
             window.alert("Este nivel no te corresponde")
             window.location = "/levels"
-        } else if (dataLevel && dataLevel.data && dataLevel.data.level >level_x && card==0){
-          setCard(1)  
+        } else if (dataLevel && dataLevel != "undefined" && dataLevel != undefined && dataLevel.data && dataLevel.data.level >level_x && card==0){
+          setCard(1)
         }
         
     },[dataLevel])
@@ -314,7 +315,7 @@ function Level() {
                         px-8 py-2 rounded mb-12 border border-black' disabled
                             ><CountdownTimer 
                          initialTime={(dataLevel&& dataLevel.data && dataLevel.data.time_passed) ?
-                          (60-Number(dataLevel&& dataLevel.data && dataLevel.data.time_passed)):0} currentLevel={currentLevel} setCard={setCard}/>
+                          (30-Number(dataLevel&& dataLevel.data && dataLevel.data.time_passed)):0} currentLevel={currentLevel} setCard={setCard}/>
                           </button><div>{JSON.stringify(dataLevel)}</div></div></div>}
 
                         {(card == 1 && info) &&
@@ -330,7 +331,7 @@ function Level() {
 
             {card == 2 && <div className='w-full items-center fixed top-0 left-0 w-full h-full flex-center flex-column justify-center z-20 bg-black'>
                 <div className="relative;"><iframe className="absolute top-0 left-0 w-full h-full" src={info.link_video} frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
-                <LoadNextPageButton time={0 || info.time} next_level={String(Number(level_x)+1)} data={dataLevel} setCard={setCard}/></div>
+                <LoadNextPageButton refetchFn={refetch} time={0 || info.time} next_level={String(Number(level_x)+1)} data={dataLevel} setCard={setCard}/></div>
                 </div>}
 
         
