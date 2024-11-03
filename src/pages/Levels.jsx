@@ -49,7 +49,7 @@ function Levels() {
             {images.map((x,i)=><Link key={"link_nivel_"+String(i)} className='w-full flex flex-col items-center justify-centers' to={"/level/"+String(i+1)}>
                 <div className='p-1 flex flex-col items-center justify-center'>
                 <h2>{i+1}</h2>
-                {(dataLevel&& dataLevel.data && dataLevel.data.level)>=i+1?<img className='h-16' src={x}  />:<img className='h-16' src={locked}  />}
+                {(dataLevel&& dataLevel.data && dataLevel.data.level)>=i?<img className='h-16' src={x}  />:<img className='h-16' src={locked}  />}
                 </div>
             </Link>)}
         </div>
