@@ -148,14 +148,14 @@ function Level() {
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/129920646?h=398078a945",
             level_img: img11,
-            image_width:"w-28",
+            image_width:"w-60",
         },
         {
             title: "Nivel 12",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/144952248?h=f60c4e1a56&autoplay=1",
             level_img: img12,
-            image_width:"w-48",
+            image_width:"w-72",
         },
 
         {
@@ -314,7 +314,7 @@ function Level() {
                         px-8 py-2 rounded mb-12 border border-black' disabled
                             ><CountdownTimer 
                          initialTime={(dataLevel&& dataLevel.data && dataLevel.data.time_passed) ?
-                          (60*60*24-Number(dataLevel&& dataLevel.data && dataLevel.data.time_passed)):0} currentLevel={currentLevel} setCard={setCard}/>
+                          (60-Number(dataLevel&& dataLevel.data && dataLevel.data.time_passed)):0} currentLevel={currentLevel} setCard={setCard}/>
                           </button><div>{JSON.stringify(dataLevel)}</div></div></div>}
 
                         {(card == 1 && info) &&
