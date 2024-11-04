@@ -30,32 +30,38 @@ import img27 from "../assets/images/levels/27.png"
 import img28 from "../assets/images/levels/28.png"
 import img29 from "../assets/images/levels/29.png"
 import img30 from "../assets/images/levels/30.png"
+import dinosaurio1 from "../assets/images/levels/all3.png"
+import dinosaurio2 from "../assets/images/levels/frame2.png"
+import dinosaurio3 from "../assets/images/levels/frame3.png"
+import dinosaurio4 from "../assets/images/levels/frame4.png"
+import dinosaurio5 from "../assets/images/levels/frame5.png"
+import dinosaurio6 from "../assets/images/levels/frame6.2.png"
 import { useGetLevelQuery } from '../app/redux/querys/authquerys'
 import LoadNextPageButton from '../components/LoadNextPageButton'
 import CountdownTimer from '../components/CountdownTimer'
 
 function Level() {
 
-    
-    const {data:dataLevel, isFetching:isFetchingLevel, refetch} = useGetLevelQuery({refetchOnMountOrArgChange: true});
- 
+
+    const { data: dataLevel, isFetching: isFetchingLevel, refetch } = useGetLevelQuery({ refetchOnMountOrArgChange: true });
+
 
     const { level_x } = useParams()
 
 
     useEffect(() => {
         refetch();
-        console.log({dataLevel,level_x});
-        if (dataLevel && dataLevel != "undefined" && dataLevel != undefined && dataLevel.data && dataLevel.data.level <level_x-1){
+        console.log({ dataLevel, level_x });
+        if (dataLevel && dataLevel != "undefined" && dataLevel != undefined && dataLevel.data && dataLevel.data.level < level_x - 1) {
             window.alert("Este nivel no te corresponde")
             window.location = "/levels"
-        } else if (dataLevel && dataLevel != "undefined" && dataLevel != undefined && dataLevel.data && dataLevel.data.level >level_x && card==0){
-          setCard(1)
+        } else if (dataLevel && dataLevel != "undefined" && dataLevel != undefined && dataLevel.data && dataLevel.data.level > level_x && card == 0) {
+            setCard(1)
         }
-        
-    },[dataLevel])
 
-//width w-px,w-0.5,w-1,w-1.5,w-2,w-2.5,w-3,w-3.5,w-4,w-5,w-6,w-7,w-8,w-9,w-10,w-11,w-12,w-14,w-16,w-20,w-24,w-28,w-32,w-36,w-40,w-44,w-48,w-52,w-56,w-60,w-64,w-72,w-80,w-96,w-auto,w-1/2,w-1/3,w-2/3,w-1/4,w-2/4,w-3/4,w-1/5,w-2/5,w-3/5,w-4/5,w-1/6,w-2/6,w-3/6,w-4/6,w-5/6,w-1/12,w-2/12,w-3/12,w-4/12,w-5/12,w-6/12,w-7/12,w-8/12,w-9/12,w-10/12,w-11/12,w-full,w-screen,w-svw,w-lvw,w-dvw,w-min,w-max,w-fit, w-px,w-0.5,w-1,w-1.5,w-2,w-2.5,w-3,w-3.5,w-4,w-5,w-6,w-7,w-8,w-9,w-10,w-11,w-12,w-14,w-16,w-20,w-24,w-28,w-32,w-36,w-40,w-44,w-48,w-52,w-56,w-60,w-64,w-72,w-80,w-96,w-auto,w-1/2,w-1/3,w-2/3,w-1/4,w-2/4,w-3/4,w-1/5,w-2/5,w-3/5,w-4/5,w-1/6,w-2/6,w-3/6,w-4/6,w-5/6,w-1/12,w-2/12,w-3/12,w-4/12,w-5/12,w-6/12,w-7/12,w-8/12,w-9/12,w-10/12,w-11/12,w-full,w-screen,w-svw,w-lvw,w-dvw,w-min,w-max,w-fit,
+    }, [dataLevel])
+
+    //width w-px,w-0.5,w-1,w-1.5,w-2,w-2.5,w-3,w-3.5,w-4,w-5,w-6,w-7,w-8,w-9,w-10,w-11,w-12,w-14,w-16,w-20,w-24,w-28,w-32,w-36,w-40,w-44,w-48,w-52,w-56,w-60,w-64,w-72,w-80,w-96,w-auto,w-1/2,w-1/3,w-2/3,w-1/4,w-2/4,w-3/4,w-1/5,w-2/5,w-3/5,w-4/5,w-1/6,w-2/6,w-3/6,w-4/6,w-5/6,w-1/12,w-2/12,w-3/12,w-4/12,w-5/12,w-6/12,w-7/12,w-8/12,w-9/12,w-10/12,w-11/12,w-full,w-screen,w-svw,w-lvw,w-dvw,w-min,w-max,w-fit, w-px,w-0.5,w-1,w-1.5,w-2,w-2.5,w-3,w-3.5,w-4,w-5,w-6,w-7,w-8,w-9,w-10,w-11,w-12,w-14,w-16,w-20,w-24,w-28,w-32,w-36,w-40,w-44,w-48,w-52,w-56,w-60,w-64,w-72,w-80,w-96,w-auto,w-1/2,w-1/3,w-2/3,w-1/4,w-2/4,w-3/4,w-1/5,w-2/5,w-3/5,w-4/5,w-1/6,w-2/6,w-3/6,w-4/6,w-5/6,w-1/12,w-2/12,w-3/12,w-4/12,w-5/12,w-6/12,w-7/12,w-8/12,w-9/12,w-10/12,w-11/12,w-full,w-screen,w-svw,w-lvw,w-dvw,w-min,w-max,w-fit,
 
     const levelsData = [
         {
@@ -63,7 +69,7 @@ function Level() {
             text: "Lorem ipsum, text 2",
             link_video: "https://vimeo.com/1025961124/9bb1284655",
             time: 5000,
-            image_width:"w-48",
+            image_width: "w-48",
         },
 
         {
@@ -71,7 +77,7 @@ function Level() {
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961584?h=475738c172",
             level_img: img1,
-            image_width:"w-48",
+            image_width: "w-48",
             time: 5000
         },
         {
@@ -79,16 +85,16 @@ function Level() {
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/129920646?h=398078a945",
             level_img: img2,
-            image_width:"w-48",
-            time:5000
+            image_width: "w-48",
+            time: 5000
         },
         {
             title: "Nivel 3",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961124?h=9bb1284655",
             level_img: img3,
-            image_width:"w-48",
-            time:5000
+            image_width: "w-48",
+            time: 5000
         },
 
         {
@@ -96,23 +102,23 @@ function Level() {
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961173?h=e7d982de22",
             level_img: img4,
-            image_width:"w-48",
-            time:5000
+            image_width: "w-48",
+            time: 5000
         },
         {
             title: "Nivel 5",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961219?h=d671f1a3c9",
             level_img: img5,
-            image_width:"w-48",
-            time:5000
+            image_width: "w-48",
+            time: 5000
         },
         {
             title: "Nivel 6",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961269?h=24065ae572",
             level_img: img6,
-            image_width:"w-48",
+            image_width: "w-48",
         },
 
         {
@@ -120,21 +126,21 @@ function Level() {
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img7,
-            image_width:"w-48",
+            image_width: "w-48",
         },
         {
             title: "Nivel 8",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img8,
-            image_width:"w-48",
+            image_width: "w-48",
         },
         {
             title: "Nivel 9",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img9,
-            image_width:"w-48",
+            image_width: "w-48",
         },
 
         {
@@ -142,21 +148,21 @@ function Level() {
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img10,
-            image_width:"w-48",
+            image_width: "w-48",
         },
         {
             title: "Nivel 11",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img11,
-            image_width:"w-60",
+            image_width: "w-60",
         },
         {
             title: "Nivel 12",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img12,
-            image_width:"w-72",
+            image_width: "w-72",
         },
 
         {
@@ -164,21 +170,21 @@ function Level() {
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img13,
-            image_width:"w-48",
+            image_width: "w-48",
         },
         {
             title: "Nivel 14",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img14,
-            image_width:"w-48",
+            image_width: "w-48",
         },
         {
             title: "Nivel 15",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img15,
-            image_width:"w-48",
+            image_width: "w-48",
         },
 
         {
@@ -186,21 +192,21 @@ function Level() {
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img16,
-            image_width:"w-48",
+            image_width: "w-48",
         },
         {
             title: "Nivel 17",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img17,
-            image_width:"w-48",
+            image_width: "w-48",
         },
         {
             title: "Nivel 18",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img18,
-            image_width:"w-48",
+            image_width: "w-48",
         },
 
         {
@@ -208,21 +214,21 @@ function Level() {
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img19,
-            image_width:"w-48",
+            image_width: "w-48",
         },
         {
             title: "Nivel 20",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img20,
-            image_width:"w-48",
+            image_width: "w-48",
         },
         {
             title: "Nivel 21",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img21,
-            image_width:"w-48",
+            image_width: "w-48",
         },
 
         {
@@ -230,21 +236,21 @@ function Level() {
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img22,
-            image_width:"w-48",
+            image_width: "w-48",
         },
         {
             title: "Nivel 23",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img23,
-            image_width:"w-48",
+            image_width: "w-48",
         },
         {
             title: "Nivel 24",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img24,
-            image_width:"w-48",
+            image_width: "w-48",
         },
 
         {
@@ -252,21 +258,21 @@ function Level() {
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img25,
-            image_width:"w-48",
+            image_width: "w-48",
         },
         {
             title: "Nivel 26",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img26,
-            image_width:"w-48",
+            image_width: "w-48",
         },
         {
             title: "Nivel 27",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img27,
-            image_width:"w-48",
+            image_width: "w-48",
         },
 
         {
@@ -274,70 +280,89 @@ function Level() {
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img28,
-            image_width:"w-48",
+            image_width: "w-48",
         },
         {
             title: "Nivel 29",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img29,
-            image_width:"w-48",
+            image_width: "w-48",
         },
         {
             title: "Nivel 30",
             text: "Lorem ipsum, text 2",
             link_video: "https://player.vimeo.com/video/1025961339?h=3e13554177",
             level_img: img30,
-            image_width:"w-48",
+            image_width: "w-48",
         },
     ]
 
     const info = levelsData[level_x]
 
-    const base_time=15;
+    const base_time = 15;
 
     const [state, setState] = useState(true);
     const [card, setCard] = useState(0);
-    
+
     const currentLevel = Number(level_x); // Ensure level_x is a number
-    
+
     console.log(info.time)
 
     return (
         <div className='w-full h-full'>
-            
-            <div className="flex justify-end"><button onClick={event =>  window.location.href='../dinosaurios/1'}><img src="../src/assets/images/levels/mas 2.png" className="mt-16 mr-8 h-12 w-20"></img></button></div>
+
+            {((card == 0 || card ==1) && info) && <div className="flex justify-end"><button onClick={() => setCard(3)}><img src="../src/assets/images/levels/mas 2.png" className="mt-16 mr-8 h-12 w-20"></img></button></div>}
+
             {(card == 0 && info) &&
                 <div className='border-solid border-yellow-100 border-100 w-full flex flex-col justify-center items-center'>
                     <h1 className='mb-4 font-raleway text-white text-[60px]'>{info.title ?? ""}</h1>
-                    
+
                     <div className="w-full sm:max-w-80 p-5 border-solid border-red border-100 pt-12 flex flex-col justify-center items-center" >
                         <img src={info.level_img ?? ""} ></img>
                         <button className='bg-white mt-14 opacity-35 text-[25px] text-zinc-500 
                         px-8 py-2 rounded mb-12 border border-black' disabled
-                            ><CountdownTimer 
-                         initialTime={(dataLevel&& dataLevel.data && dataLevel.data.time_passed) ?
-                          (base_time-Number(dataLevel&& dataLevel.data && dataLevel.data.time_passed)):0} currentLevel={currentLevel} setCard={setCard} />
-                          </button></div></div>}
+                        ><CountdownTimer
+                                initialTime={(dataLevel && dataLevel.data && dataLevel.data.time_passed) ?
+                                    (base_time - Number(dataLevel && dataLevel.data && dataLevel.data.time_passed)) : 0} currentLevel={currentLevel} setCard={setCard} />
+                        </button></div></div>
+            }
 
-                        {(card == 1 && info) &&
+            {(card == 1 && info) &&
                 <div className='border-solid border-yellow-100 border-100 w-full flex flex-col justify-center items-center'>
                     <h1 className='mb-4 font-raleway text-white text-[60px]'>{info.title ?? ""}</h1>
-                    
+
                     <div className="w-full sm:max-w-80 p-5 border-solid border-red border-100 pt-12 flex flex-col justify-center items-center" >
                         <div className='flex flex-center items-center justify-center w-full'><img className={info.image_width} src={info.level_img ?? ""} ></img></div>
                         <button className='bg-white mt-14 opacity-35 text-[25px] text-zinc-500 
                         px-8 py-2 rounded mb-12 border border-black' onClick={() => setCard(2)}
-                         >Iniciar meditacion
-                          </button></div></div>} 
+                        >Iniciar meditacion
+                        </button></div></div>}
 
             {card == 2 && <div className='w-full items-center fixed top-0 left-0 w-full h-full flex-center flex-column justify-center z-20 bg-black'>
                 <div className="relative;"><iframe className="absolute top-0 left-0 w-full h-full" src={info.link_video} frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
-                <LoadNextPageButton refetchFn={refetch} time={0 || info.time+((dataLevel&& dataLevel.data && dataLevel.data.time_passed) ?
-                          (30-Number(dataLevel&& dataLevel.data && dataLevel.data.time_passed)):0)}  data={dataLevel} setCard={setCard} level_x={level_x}/></div>
-                </div>}
+                    <LoadNextPageButton refetchFn={refetch} time={0 || info.time + ((dataLevel && dataLevel.data && dataLevel.data.time_passed) ?
+                        (30 - Number(dataLevel && dataLevel.data && dataLevel.data.time_passed)) : 0)} data={dataLevel} setCard={setCard} level_x={level_x} /></div>
+            </div>}
 
-        
+            {(card == 3 && info && dataLevel && dataLevel.data && dataLevel.data.level) &&
+                <div className='border-solid border-yellow-100 border-100 w-full flex flex-col justify-center items-center mt-24'>
+                    <h1 className='mb-4 font-raleway text-white text-[60px]'>Dinosaurios capturados</h1>
+
+                    <div className="w-full sm:max-w-80 p-5 border-solid border-red border-100 pt-12 flex flex-col justify-center items-center" >
+                        {dataLevel.data.level>0 && dataLevel.data.level<=5 && <img src={dinosaurio1}/>}
+                        {dataLevel.data.level>5 && dataLevel.data.level<=11 && <img src={dinosaurio2}/>}
+                        {dataLevel.data.level>11 && dataLevel.data.level<=17 && <img src={dinosaurio3}/>}
+                        {dataLevel.data.level>17 && dataLevel.data.level<=23 && <img src={dinosaurio4}/>}
+                        {dataLevel.data.level>23 && dataLevel.data.level<=29 && <img src={dinosaurio5}/>}
+                        {dataLevel.data.level>=30 && <img src={dinosaurio6}/>}
+                        
+                        <button className='bg-white mt-14 opacity-35 text-[25px] text-zinc-500 
+                        px-8 py-2 rounded mb-12 border border-black' onClick={()=>{setCard(0)}}
+                        >Volver
+                        </button></div></div>
+            }
+
             {
                 !info && <div>No existe datos del nivel</div>
             }

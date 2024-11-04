@@ -35,11 +35,11 @@ const obtenernivel=()=>{
             <div className='w-full h-full fixed top-0 left-0 '>
                 <img className='w-full fixed top-0 left-0 h-full' src={bg_image} />
             </div>
-            <div className='pt-14 absolute w-full h-full top-0 left-0 flex flex-col items-center'>
+            <div className='pt-8 absolute w-full h-full top-0 left-0 flex flex-col items-center'>
             
             { (!modal) && children }
-            { (modal ) && <div className=' w-full h-full absolute flex flex-col items-center justify-center top-14 left-0'>
-                <div className='w-full max-w-3xl py-2 flex flex-col items-center justify-center  rounded-xl text-center'>
+            { (modal ) && <div className=' w-full h-full absolute flex flex-col items-center justify-center  left-0'>
+                <div className='w-full max-w-3xl  flex flex-col items-center justify-center  rounded-xl text-center'>
                     <div className='text-white'>
                         
                         <h1 className='text-[40px] text-bold font-raleway mb-8'>
