@@ -3,7 +3,7 @@ import { usePostUpdateLevelMutation } from '../app/redux/querys/authquerys';
 import jsCookie from "js-cookie";
 
 
-function LoadNextPageButton({time,next_level,setCard=()=>{},refetchFn=()=>{}}) {
+function LoadNextPageButton({time,level_x,setCard=()=>{},refetchFn=()=>{}}) {
     const [nextButton,setNextButton] = useState(false);
 
     const [postUpdateLevel, { isSuccess, isError, isLoading, error }] =
@@ -16,8 +16,12 @@ function LoadNextPageButton({time,next_level,setCard=()=>{},refetchFn=()=>{}}) {
         await refetchFn();
         jsCookie.set("MFM_LEVEL", response.data.level);
         jsCookie.set("MFM_LASTCOMP", response.data.last_completed);
-        window.alert( "Felicidades, ahora te toca el siguiente nivel despues de que se cumplan 24 horas" );
-        window.location="/level/"+next_level;
+        if(level_x<30){
+          window.alert( "Felicidades, ahora podras acceder al nivel despues de que se cumplan 24 horas" );  
+        }else{
+          window.alert( "Felicidades, ha terminado las sesiones. Puede repasar todas las sesiones anteriores caundo desee" );  
+        }
+        window.location="/levels";
         setCard(0)
       }
       if(error && error.data && error.data.error){

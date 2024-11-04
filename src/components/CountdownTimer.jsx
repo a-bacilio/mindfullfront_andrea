@@ -1,22 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useGetLevelQuery } from '../app/redux/querys/authquerys';
+
 
 
 
 const CountdownTimer = ({initialTime=9999, currentLevel, setCard=()=>{}}) => {
   // Initial time in seconds (1 hour)
-  const {data:dataLevel, isFetching:isFetchingLevel, refetch} = useGetLevelQuery ();
-  const [timeRemaining, setTimeRemaining] = useState((dataLevel&& dataLevel.data && dataLevel.data.time_passed) ?
-  (30-Number(dataLevel&& dataLevel.data && dataLevel.data.time_passed)):99999999);
+
+  const [timeRemaining, setTimeRemaining] = useState(initialTime);
   const navigate = useNavigate();
-  
-  useEffect(() => {
-    refetch();
-    setTimeRemaining((dataLevel&& dataLevel.data && dataLevel.data.time_passed) ?
-    (30-Number(dataLevel&& dataLevel.data && dataLevel.data.time_passed)):99999999)
-  }, [])
-  
+    
   
   useEffect(() => {
     const timerInterval = setInterval(() => {
