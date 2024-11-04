@@ -21,11 +21,15 @@ function Index() {
         usePostLoginUserMutation();
       const dispatch = useDispatch();
       const onSubmit = async (data) => {
-        console.log(data.email)
         jsCookie.set("MFM_EMAIL",data.email)
         const response = await postLoginForm(data);
-        console.log(response);
-        dispatch(storeUserToken(response));
+        if(response.error && response.error.data && response.error.data.message){
+          window.alert(response.error.data.message)
+        }else if(response.error){
+          window.alert(JSON.stringify(response.error))
+        }else{
+          dispatch(storeUserToken(response));
+        }
       };
 
   return (

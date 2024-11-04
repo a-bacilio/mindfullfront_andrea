@@ -2,35 +2,27 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { usePostRegisterUserMutation } from "../../app/redux/querys/authquerys";
 import { GetQuestions } from "./GetQuestions";
+import { useState } from "react";
+import {GetQuestionsForm} from "./GetQuestionsForm";
 
 
 
 
 function Recover() {
 
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-      } = useForm();
-      const [postRegisterForm, { isSuccess, isError, isLoading, error }] =
-      usePostRegisterUserMutation();
-      const onSubmit = async (data) => {
-        console.log(data)
-        const response = await postRegisterForm(data);
-        console.log(response);
-        if(response && response.data && response.data.message && response.data.message=="User was created"){
-          window.alert("Usuario creado")
-          window.location="/"
-        }else{
-          window.alert("El correo ya esta siendo usado")
-        }
-      };
+    const [card, setCard] = useState(1)
+    const [questionsList, setQuestionsList] = useState({pregunta_1:"pregunta1",pregunta_2:"pregunta_2"})
+    const [email, setEmail] = useState("")
+
+
 
   return (
     
+    <div className="mt-24">
+         {card==1 && (<GetQuestions setQuestionsList={setQuestionsList} setCard={setCard} setEmail={setEmail}/> )}
+         {card==2 && (<GetQuestionsForm questionsList={questionsList} email={email}/> )}
+    </div>
     
-    <GetQuestions/>
     
     
   )

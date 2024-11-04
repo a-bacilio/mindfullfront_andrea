@@ -54,6 +54,27 @@ export const authAPI = createApi({
       }),
       transformResponse: (response) => response,
     }),
+    postChangePassword: builder.mutation({
+      query: ({ email,
+        answer_1,
+        answer_2,
+        password,
+        password_confirmation }) => ({
+        url: "/changepassword",
+        method: "post",
+        headers: {
+          Accept: "aplication/json"
+        },
+        body: {
+          email,
+          answer_1,
+          answer_2,
+          password,
+          password_confirmation
+        },
+      }),
+      transformResponse: (response) => response,
+    }),
     getLevel: builder.query({
       query: () => ({
         url: "/getlevel",
@@ -99,5 +120,6 @@ export const {
   usePostRegisterUserMutation,
   usePostRecoverQuestionsMutation,
   useGetLevelQuery,
-  usePostUpdateLevelMutation
+  usePostUpdateLevelMutation,
+  usePostChangePasswordMutation,
 } = authAPI;
