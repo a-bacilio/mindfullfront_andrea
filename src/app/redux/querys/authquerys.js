@@ -14,6 +14,7 @@ export const authAPI = createApi({
       query: ({ email, password }) => ({
         url: "/login",
         method: "post",
+        mode: "cors",
         body: {
           email,
           password,
@@ -25,6 +26,7 @@ export const authAPI = createApi({
       query: ({ name, email, password, password_confirmation, question_1, question_2, answer_1, answer_2 }) => ({
         url: "/register",
         method: "post",
+        mode: "cors",
         headers: {
           Accept: "aplication/json"
         },
@@ -45,6 +47,7 @@ export const authAPI = createApi({
       query: ({ email }) => ({
         url: "/recoverquestions",
         method: "post",
+        mode: "cors",
         headers: {
           Accept: "aplication/json"
         },
@@ -62,6 +65,7 @@ export const authAPI = createApi({
         password_confirmation }) => ({
         url: "/changepassword",
         method: "post",
+        mode: "cors",
         headers: {
           Accept: "aplication/json"
         },
@@ -79,6 +83,7 @@ export const authAPI = createApi({
       query: () => ({
         url: "/getlevel",
         method: "post",
+        mode: "cors",
         headers: {
           Accept: "aplication/json",
           Authorization: "Bearer " + String(jsCookie.get("MFM_TOKEN"))
@@ -99,6 +104,7 @@ export const authAPI = createApi({
       query: () => ({
         url: "/updatelevel",
         method: "post",
+        mode: "cors",
         headers: {
           Accept: "aplication/json",
           Authorization: "Bearer " + String(jsCookie.get("MFM_TOKEN"))
