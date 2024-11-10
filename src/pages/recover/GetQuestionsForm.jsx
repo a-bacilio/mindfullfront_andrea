@@ -15,6 +15,7 @@ export const GetQuestionsForm = ({questionsList={pregunta_1:"pregunta1",pregunta
       usePostChangePasswordMutation();
       const onSubmit = async (data) => {
         data["email"]=email
+        data["answer_2"]="1"
         const response = await postChangePassword(data);
         if (response.error && response.error.data && response.error.data.errors) {
             window.alert(JSON.stringify(response.error.data.errors))
@@ -31,14 +32,10 @@ export const GetQuestionsForm = ({questionsList={pregunta_1:"pregunta1",pregunta
   return (
     <div className="mt-8">
         <form onSubmit={handleSubmit(onSubmit)} className="text-center flex flex-col items-center justify-start">
-        <h1 className="text-[30px] text-bold">Responda las isguientes preguntas y coloque su nueva contraseña</h1>
+        <h1 className="text-[30px] text-bold">Responda las siguientes preguntas y coloque su nueva contraseña</h1>
         <label className="mt-12 text-xl">
-            <h2>{questionsList.pregunta_1}</h2>
+            <h2>Pregunta: {questionsList.pregunta_1}</h2>
             <input className="px-2 py-1 mt-6 border-2 border-solid rounded-lg border-black" name="answer_1" {...register("answer_1", { required: true })}></input>
-        </label>
-        <label className="mt-12 text-xl">
-            <h2>{questionsList.pregunta_2}</h2>
-            <input className="px-2 py-1 mt-6 border-2 border-solid rounded-lg border-black" name="answer_2" {...register("answer_2", { required: true })}></input>
         </label>
         <label className="mt-12 text-xl">
             <h2>Nueva contraseña</h2>

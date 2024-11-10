@@ -342,7 +342,7 @@ function Level() {
             {card == 2 && <div className='w-full items-center fixed top-0 left-0 w-full h-full flex-center flex-column justify-center z-20 bg-black'>
                 <div className="relative;"><iframe className="absolute top-0 left-0 w-full h-full" src={info.link_video} frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
                     <LoadNextPageButton refetchFn={refetch} time={0 || info.time + ((dataLevel && dataLevel.data && dataLevel.data.time_passed) ?
-                        (30 - Number(dataLevel && dataLevel.data && dataLevel.data.time_passed)) : 0)} data={dataLevel} setCard={setCard} level_x={level_x} /></div>
+                        (30 - Number(dataLevel && dataLevel.data && dataLevel.data.time_passed)) : 0)} level={dataLevel && dataLevel.data && dataLevel.data.level} setCard={setCard} level_x={level_x} /></div>
             </div>}
 
             {(card == 3 && info && dataLevel && dataLevel.data && dataLevel.data.level) &&
