@@ -36,9 +36,11 @@ import dinosaurio3 from "../assets/images/levels/frame3.png"
 import dinosaurio4 from "../assets/images/levels/frame4.png"
 import dinosaurio5 from "../assets/images/levels/frame5.png"
 import dinosaurio6 from "../assets/images/levels/frame6.2.png"
+import plus_logo from "../assets/images/levels/mas 2.png"
 import { useGetLevelQuery } from '../app/redux/querys/authquerys'
 import LoadNextPageButton from '../components/LoadNextPageButton'
 import CountdownTimer from '../components/CountdownTimer'
+
 
 function Level() {
 
@@ -312,7 +314,7 @@ function Level() {
     return (
         <div className='w-full h-full'>
 
-            {((card == 0 || card ==1) && info) && <div className="flex justify-end"><button onClick={() => setCard(3)}><img src="../src/assets/images/levels/mas 2.png" className="mt-16 mr-8 h-12 w-20"></img></button></div>}
+            {((card == 0 || card ==1) && info) && <div className="flex justify-end"><button onClick={() => setCard(3)}><img src={plus_logo} className="mt-16 mr-8 h-12 w-20"></img></button></div>}
 
             {(card == 0 && info) &&
                 <div className='border-solid border-yellow-100 border-100 w-full flex flex-col justify-center items-center'>
