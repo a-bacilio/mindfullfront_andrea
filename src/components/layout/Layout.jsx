@@ -42,10 +42,10 @@ const obtenernivel=()=>{
                 <div className='w-full max-w-3xl  flex flex-col items-center justify-center  rounded-xl text-center'>
                     <div className='text-white'>
                         
-                        <h1 className='text-[40px] text-bold font-raleway mb-8'>
+                        <h1 className='text-[40px] text-bold font-raleway mb-2 mt-32'>
                             Más información
                         </h1>
-                        {card !== 2 && (<div><button className='text-[30px] font-raleway mt-8 bg-rose-400 px-2 py-1 rounded-lg w-60 mb-2' onClick={() => {if(card==1){setCard(0)}else{setCard(1)}}}>La técnica</button>
+                        {card !== 2 && (<div><button className='text-[30px] font-raleway mt-2 bg-rose-400 px-2 py-1 rounded-lg w-60 mb-2' onClick={() => {if(card==1){setCard(0)}else{setCard(1)}}}>La técnica</button>
                             
                         </div>)}
                         {card == 1 &&<div className="w-full max-w-80 mt-12 text-center h-80 p-10 overflow-y-auto bg-rose-400 rounded-lg text-white text-lg">

@@ -10,19 +10,17 @@ function LoadNextPageButton({time,level_x,setCard=()=>{},refetchFn=()=>{},level=
     usePostUpdateLevelMutation();
 
     const onUpdateLevel = async () => {
-      window.alert(JSON.stringify(level))
-      window.alert(level_x)
-      if(Number(level)+1==Number(level_x)){
+      if(Number(level)<Number(level_x)+1){
         const { data: response, error } = await postUpdateLevel();
         await refetchFn();
         if (response && response.data && response.data.level){
           await refetchFn();
           jsCookie.set("MFM_LEVEL", response.data.level);
           jsCookie.set("MFM_LASTCOMP", response.data.last_completed);
-          if(level_x<30){
+          if(level_x<10){
             window.alert( "Felicidades, ahora podras acceder al nivel despues de que se cumplan 24 horas" );  
           }else{
-            window.alert( "Felicidades, ha terminado las sesiones. Puede repasar todas las sesiones anteriores caundo desee" );  
+            window.alert( "Felicidades, ha terminado las sesiones. Puede repasar todas las sesiones anteriores cuando desees" );  
           }
           window.location="/levels";
           setCard(0)
