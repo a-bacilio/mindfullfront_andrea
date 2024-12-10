@@ -78,7 +78,7 @@ function Level() {
             link_video: "https://player.vimeo.com/video/1034888072",
             level_img: img1,
             image_width: "w-48",
-            time: 5000
+            time: 1000*(3*60+23)
         },
         {
             title: "Nivel 2",
@@ -86,7 +86,7 @@ function Level() {
             link_video: "https://player.vimeo.com/video/1034888084",
             level_img: img6,
             image_width: "w-48",
-            time: 5000
+            time: 1000*(3*60+3)
         },
         {
             title: "Nivel 3",
@@ -94,7 +94,7 @@ function Level() {
             link_video: "https://player.vimeo.com/video/1034888099",
             level_img: img7,
             image_width: "w-48",
-            time: 5000
+            time: 1000*(3*60+22)
         },
 
         {
@@ -103,7 +103,7 @@ function Level() {
             link_video: "https://player.vimeo.com/video/1034900068",
             level_img: img12,
             image_width: "w-48",
-            time: 5000
+            time: 1000*(2*60+44)
         },
         {
             title: "Nivel 5",
@@ -154,7 +154,7 @@ function Level() {
 
     const info = levelsData[level_x]
 
-    const base_time = 300;
+    const base_time = 24*60*60;
 
     const [card, setCard] = useState(0);
 
@@ -181,8 +181,7 @@ function Level() {
 
             {card == 2 && <div className='w-full items-center fixed top-0 left-0 w-full h-full flex-center flex-column justify-center z-20 bg-black'>
                 <div className="relative;"><iframe className="absolute top-0 left-0 w-full h-full" src={info.link_video} frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
-                    {dataLevel && dataLevel.data && dataLevel.data.level && <LoadNextPageButton refetchFn={refetch} time={0 || info.time + ((dataLevel && dataLevel.data && dataLevel.data.time_passed) ?
-                        (30 - Number(dataLevel && dataLevel.data && dataLevel.data.time_passed)) : 0)} level={dataLevel && dataLevel.data && dataLevel.data.level} setCard={setCard} level_x={level_x} />}
+                    {dataLevel && dataLevel.data && dataLevel.data.level && <LoadNextPageButton refetchFn={refetch} time={info.time || 0} level={dataLevel && dataLevel.data && dataLevel.data.level} setCard={setCard} level_x={level_x} />}
                         </div>
             </div>}
 
