@@ -154,7 +154,7 @@ function Level() {
 
     const info = levelsData[level_x]
 
-    const base_time = 24*60*60;
+    const base_time = 12*60*60;
 
     const [card, setCard] = useState(0);
 
