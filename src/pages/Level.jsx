@@ -108,10 +108,10 @@ function Level() {
         {
             title: "Nivel 5",
             text: "Lorem ipsum, text 2",
-            link_video: "https://player.vimeo.com/video/1025961219?h=d671f1a3c9",
+            link_video: "https://player.vimeo.com/video/1040330310",
             level_img: img13,
             image_width: "w-48",
-            time: 5000
+            time: 1000*(3*60+10)
         },
         {
             title: "Nivel 6",
