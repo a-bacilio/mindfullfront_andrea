@@ -18,7 +18,7 @@ function LoadNextPageButton({time,level_x,setCard=()=>{},refetchFn=()=>{},level=
           jsCookie.set("MFM_LEVEL", response.data.level);
           jsCookie.set("MFM_LASTCOMP", response.data.last_completed);
           if(level_x<10){
-            window.alert( "Felicidades, ahora podras acceder al nivel despues de que se cumplan 24 horas" );  
+            window.alert( "Felicidades, ahora podras acceder al nivel despues de que se cumplan 6 horas" );  
           }else{
             window.alert( "Felicidades, ha terminado las sesiones. Puede repasar todas las sesiones anteriores cuando desees" );  
           }
